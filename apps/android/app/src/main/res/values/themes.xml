@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Marmalade theme. Splash screen support skipped (core-splashscreen
+         not available in offline Gradle cache). Using a standard theme with
+         amber status bar colors instead. -->
+    <style name="Theme.Marmalade" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/marmalade_amber_50</item>
+    </style>
+</resources>

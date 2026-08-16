@@ -1,0 +1,8 @@
+{
+  "jsonrpc": "2.0",
+  "id": "149",
+  "error": {
+    "code": -32003,
+    "message": "principal may not read this session"
+  }
+}

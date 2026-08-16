@@ -1,0 +1,7 @@
+{
+  "jsonrpc": "2.0",
+  "id": "70",
+  "result": {
+    "default_cwd": "/home/user"
+  }
+}

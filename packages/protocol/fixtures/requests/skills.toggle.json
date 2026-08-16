@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "67",
+  "method": "skills.toggle",
+  "params": {
+    "name": "release-notes",
+    "enabled": true
+  }
+}

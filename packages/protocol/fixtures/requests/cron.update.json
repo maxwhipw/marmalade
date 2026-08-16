@@ -1,0 +1,10 @@
+{
+  "jsonrpc": "2.0",
+  "id": "107",
+  "method": "cron.update",
+  "params": {
+    "job_id": "cj_9pQz1XcTd4Ry",
+    "name": "daily digest",
+    "enabled": false
+  }
+}

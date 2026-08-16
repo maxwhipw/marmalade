@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://marmalade.dev/schemas/marmalade-ui.v1.schema.json",
+  "title": "Marmalade UI v1 node tree",
+  "description": "The closed dynamic-UI vocabulary emitted inside ```marmalade-ui fences. Spec: docs/dynamic-ui/marmalade-ui-v1.md. Renderers are TOLERANT (missing fields take defaults; unknown types degrade) — this schema is the authoring truth, not a wire gate.",
+  "$ref": "#/$defs/node",
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": ["type"],
+      "properties": { "type": { "type": "string" }, "id": { "type": "string" } },
+      "allOf": [
+        { "if": { "properties": { "type": { "const": "column" } } }, "then": { "$ref": "#/$defs/container" } },
+        { "if": { "properties": { "type": { "const": "row" } } }, "then": { "$ref": "#/$defs/container" } },
+        { "if": { "properties": { "type": { "const": "card" } } }, "then": { "$ref": "#/$defs/card" } },
+        { "if": { "properties": { "type": { "const": "text" } } }, "then": { "$ref": "#/$defs/text" } },
+        { "if": { "properties": { "type": { "const": "list" } } }, "then": { "$ref": "#/$defs/list" } },
+        { "if": { "properties": { "type": { "const": "table" } } }, "then": { "$ref": "#/$defs/table" } },
+        { "if": { "properties": { "type": { "const": "code" } } }, "then": { "$ref": "#/$defs/code" } },
+        { "if": { "properties": { "type": { "const": "alert" } } }, "then": { "$ref": "#/$defs/alert" } },
+        { "if": { "properties": { "type": { "const": "button" } } }, "then": { "$ref": "#/$defs/button" } },
+        { "if": { "properties": { "type": { "const": "text_input" } } }, "then": { "$ref": "#/$defs/textInput" } },
+        { "if": { "properties": { "type": { "const": "select" } } }, "then": { "$ref": "#/$defs/select" } },
+        { "if": { "properties": { "type": { "const": "checkbox" } } }, "then": { "$ref": "#/$defs/checkbox" } },
+        { "if": { "properties": { "type": { "const": "chip_group" } } }, "then": { "$ref": "#/$defs/chipGroup" } },
+        { "if": { "properties": { "type": { "const": "progress" } } }, "then": { "$ref": "#/$defs/progress" } },
+        { "if": { "properties": { "type": { "const": "status" } } }, "then": { "$ref": "#/$defs/status" } },
+        { "if": { "properties": { "type": { "const": "countdown" } } }, "then": { "$ref": "#/$defs/countdown" } }
+      ]
+    },
+    "children": { "type": "array", "items": { "$ref": "#/$defs/node" } },
+    "container": { "properties": { "children": { "$ref": "#/$defs/children" } } },
+    "card": { "properties": { "title": { "type": "string" }, "children": { "$ref": "#/$defs/children" } } },
+    "text": {
+      "required": ["text"],
+      "properties": {
+        "text": { "type": "string" },
+        "style": { "enum": ["headline", "title", "body", "caption"] },
+        "bold": { "type": "boolean" },
+        "color": { "enum": ["default", "primary", "success", "warning", "error"] }
+      }
+    },
+    "list": {
+      "required": ["items"],
+      "properties": { "items": { "type": "array", "items": { "type": "string" } }, "ordered": { "type": "boolean" } }
+    },
+    "table": {
+      "required": ["columns", "rows"],
+      "properties": {
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "rows": { "type": "array", "items": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "code": { "required": ["code"], "properties": { "code": { "type": "string" }, "language": { "type": "string" } } },
+    "alert": {
+      "required": ["text"],
+      "properties": {
+        "text": { "type": "string" },
+        "level": { "enum": ["info", "success", "warning", "error"] },
+        "title": { "type": "string" }
+      }
+    },
+    "button": {
+      "required": ["label", "action"],
+      "properties": {
+        "label": { "type": "string" },
+        "action": { "enum": ["callback", "open_url", "copy_to_clipboard"] },
+        "event": { "type": "string" },
+        "collect_from": { "type": "array", "items": { "type": "string" } },
+        "url": { "type": "string" },
+        "text": { "type": "string" },
+        "variant": { "enum": ["primary", "secondary", "danger"] }
+      }
+    },
+    "textInput": {
+      "required": ["id"],
+      "properties": { "id": { "type": "string" }, "label": { "type": "string" }, "placeholder": { "type": "string" }, "value": { "type": "string" } }
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          { "type": "object", "required": ["id"], "properties": { "id": { "type": "string" }, "label": { "type": "string" } } }
+        ]
+      }
+    },
+    "select": {
+      "required": ["id", "options"],
+      "properties": { "id": { "type": "string" }, "label": { "type": "string" }, "options": { "$ref": "#/$defs/options" } }
+    },
+    "checkbox": {
+      "required": ["id", "label"],
+      "properties": { "id": { "type": "string" }, "label": { "type": "string" }, "checked": { "type": "boolean" } }
+    },
+    "chipGroup": {
+      "required": ["id", "options"],
+      "properties": { "id": { "type": "string" }, "options": { "$ref": "#/$defs/options" }, "multi": { "type": "boolean" } }
+    },
+    "progress": { "properties": { "value": { "type": "number", "minimum": 0, "maximum": 1 }, "label": { "type": "string" } } },
+    "status": {
+      "required": ["text"],
+      "properties": { "text": { "type": "string" }, "state": { "enum": ["pending", "active", "success", "error"] } }
+    },
+    "countdown": {
+      "properties": { "until": { "type": "number" }, "seconds": { "type": "number" }, "label": { "type": "string" } }
+    }
+  }
+}

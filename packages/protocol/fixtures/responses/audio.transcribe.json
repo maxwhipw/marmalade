@@ -1,0 +1,8 @@
+{
+  "jsonrpc": "2.0",
+  "id": "121",
+  "result": {
+    "transcript": "what is on my calendar",
+    "provider": "whisper-ctranslate2"
+  }
+}

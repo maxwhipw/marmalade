@@ -1,0 +1,23 @@
+{
+  "name": "@marmalade/ui-tree",
+  "version": "0.0.1",
+  "description": "Marmalade UI v1 node-tree parser (docs/dynamic-ui/marmalade-ui-v1.md) — repair + tolerant build + response grammar, shared by the webui and CLI renderers",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test --experimental-strip-types \"test/*.test.ts\""
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "24.10.1"
+  }
+}

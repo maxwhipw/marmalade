@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": "2",
+  "method": "hello",
+  "params": {
+    "protocolVersion": 1,
+    "client": {
+      "name": "marmalade-cli",
+      "version": "0.0.1",
+      "capabilities": []
+    }
+  }
+}

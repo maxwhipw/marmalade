@@ -1,0 +1,34 @@
+{
+  "jsonrpc": "2.0",
+  "method": "event",
+  "params": {
+    "type": "message.complete",
+    "payload": {
+      "subtype": "success",
+      "is_error": false,
+      "text": "The diff splits the tokenizer out of the parser.",
+      "usage": {
+        "input_tokens": 4120,
+        "output_tokens": 318,
+        "cache_read_tokens": 41880,
+        "cache_creation_tokens": 2100,
+        "cost_usd": 0.0412,
+        "context_used": 48210,
+        "context_max": 200000,
+        "context_percent": 24
+      },
+      "message_id": "k3Jd8Qm2Xp1A",
+      "has_cut_point": true,
+      "seq": 53,
+      "ts": 1786000002000,
+      "origin": {
+        "user_id": "owner",
+        "device_id": "handset-1",
+        "platform": "android",
+        "source": "text",
+        "tz_offset": 600
+      }
+    },
+    "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e"
+  }
+}

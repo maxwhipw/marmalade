@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "43",
+  "method": "session.effort",
+  "params": {
+    "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e",
+    "reasoning_effort": "medium"
+  }
+}

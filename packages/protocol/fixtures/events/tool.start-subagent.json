@@ -1,0 +1,28 @@
+{
+  "jsonrpc": "2.0",
+  "method": "event",
+  "params": {
+    "type": "tool.start",
+    "payload": {
+      "id": "toolu_01ExampleSubagentToolUse",
+      "name": "Bash",
+      "input": {
+        "command": "make test"
+      },
+      "parent_tool_use_id": "toolu_01ExampleToolUseId",
+      "subagent_type": "general-purpose",
+      "task_description": "run the suite",
+      "message_id": "k3Jd8Qm2Xp1A",
+      "seq": 49,
+      "ts": 1786000000600,
+      "origin": {
+        "user_id": "owner",
+        "device_id": "handset-1",
+        "platform": "android",
+        "source": "text",
+        "tz_offset": 600
+      }
+    },
+    "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e"
+  }
+}

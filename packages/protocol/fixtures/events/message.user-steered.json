@@ -1,0 +1,22 @@
+{
+  "jsonrpc": "2.0",
+  "method": "event",
+  "params": {
+    "type": "message.user",
+    "payload": {
+      "message_id": "Yh4Wc6Tj2Ns8",
+      "seq": 58,
+      "ts": 1786000009000,
+      "origin": {
+        "user_id": "owner",
+        "device_id": "handset-1",
+        "platform": "android",
+        "source": "voice",
+        "tz_offset": 600
+      },
+      "text": "stop and run the tests first",
+      "steered": true
+    },
+    "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e"
+  }
+}

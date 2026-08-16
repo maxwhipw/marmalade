@@ -1,0 +1,291 @@
+{
+  "$source": "Glyphs are Lucide (https://github.com/lucide-icons/lucide), path data copied unmodified from icons/<name>.svg, fetched 2026-08-01. DUAL-licensed: ISC (c) Lucide Icons and Contributors, MIT (c) 2013-present Cole Bemis for the icons upstream lists as Feather-derived. Per-icon license is the `license` field. See LICENSE.lucide and ../../THIRD-PARTY-NOTICES.md.",
+  "$schema_note": "Marmalade icon map — token -> glyph. Signed off in design lab 'icon-map' (2026-08-01). Tokens are APPEND-ONLY: a token may be repointed at a different glyph, never renamed, because the name is what the clients share. Domains: tool (a tool call), agent (session lifecycle / ask surfaces), ui (chrome).",
+  "grid": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "strokeWidth": 2,
+    "strokeLinecap": "round",
+    "strokeLinejoin": "round",
+    "minRenderSize": 14
+  },
+  "licenses": {
+    "isc": {
+      "spdx": "ISC",
+      "holder": "Lucide Icons and Contributors",
+      "year": "2026",
+      "source": "https://github.com/lucide-icons/lucide",
+      "text": "LICENSE.lucide"
+    },
+    "mit-feather": {
+      "spdx": "MIT",
+      "holder": "Cole Bemis",
+      "year": "2013-present",
+      "source": "https://github.com/feathericons/feather",
+      "note": "Lucide icons explicitly listed in the upstream LICENSE as derived from Feather.",
+      "text": "LICENSE.lucide"
+    }
+  },
+  "banned": {
+    "sparkles": "Banned 2026-08-01 by design policy: sparkles are not used on any Marmalade surface, including as alternates. Marmalade does not dress AI up as magic — the imagery stays de-anthropomorphized and literal about what the software does."
+  },
+  "tokens": {
+    "icon.tool.terminal": {
+      "glyph": "square-terminal",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"m7 11 2-2-2-2\" /> <path d=\"M11 13h4\" /> <rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" />",
+      "matches": "Bash · terminal · shell · run",
+      "wire": [
+        "bash",
+        "terminal",
+        "shell",
+        "run"
+      ]
+    },
+    "icon.tool.read": {
+      "glyph": "file-text",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\" /> <path d=\"M14 2v5a1 1 0 0 0 1 1h5\" /> <path d=\"M10 9H8\" /> <path d=\"M16 13H8\" /> <path d=\"M16 17H8\" />",
+      "matches": "Read · read_file · view",
+      "wire": [
+        "read",
+        "read_file",
+        "view"
+      ]
+    },
+    "icon.tool.write": {
+      "glyph": "file-plus",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\" /> <path d=\"M14 2v5a1 1 0 0 0 1 1h5\" /> <path d=\"M9 15h6\" /> <path d=\"M12 18v-6\" />",
+      "matches": "Write · write_file",
+      "wire": [
+        "write",
+        "write_file"
+      ]
+    },
+    "icon.tool.edit": {
+      "glyph": "file-pen",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M12.659 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v9.34\" /> <path d=\"M14 2v5a1 1 0 0 0 1 1h5\" /> <path d=\"M10.378 12.622a1 1 0 0 1 3 3.003L8.36 20.637a2 2 0 0 1-.854.506l-2.867.837a.5.5 0 0 1-.62-.62l.836-2.869a2 2 0 0 1 .506-.853z\" />",
+      "matches": "Edit · MultiEdit · NotebookEdit",
+      "wire": [
+        "edit",
+        "multiedit",
+        "notebookedit"
+      ]
+    },
+    "icon.tool.list": {
+      "glyph": "folder-open",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2\" />",
+      "matches": "Glob · ls · list_dir",
+      "wire": [
+        "glob",
+        "ls",
+        "list_dir"
+      ]
+    },
+    "icon.tool.search": {
+      "glyph": "search-code",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"m13 13.5 2-2.5-2-2.5\" /> <path d=\"m21 21-4.3-4.3\" /> <path d=\"M9 8.5 7 11l2 2.5\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />",
+      "matches": "Grep · search · find",
+      "wire": [
+        "grep",
+        "search",
+        "find"
+      ]
+    },
+    "icon.tool.web.fetch": {
+      "glyph": "globe",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <path d=\"M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20\" /> <path d=\"M2 12h20\" />",
+      "matches": "WebFetch · browse · fetch",
+      "wire": [
+        "webfetch",
+        "browse",
+        "fetch"
+      ]
+    },
+    "icon.tool.web.search": {
+      "glyph": "search",
+      "source": "lucide",
+      "license": "mit-feather",
+      "svg": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />",
+      "matches": "WebSearch",
+      "wire": [
+        "websearch"
+      ]
+    },
+    "icon.tool.image": {
+      "glyph": "image",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" /> <circle cx=\"9\" cy=\"9\" r=\"2\" /> <path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\" />",
+      "matches": "generate_image · image",
+      "wire": [
+        "generate_image",
+        "image"
+      ]
+    },
+    "icon.tool.skill": {
+      "glyph": "feather",
+      "source": "lucide",
+      "license": "mit-feather",
+      "svg": "<path d=\"M14.086 18.412A2 2 0 0112.67 19H5v-7.672a2 2 0 01.586-1.414L11.75 3.75a6 6 0 118.49 8.49z\" /> <path d=\"M16 8 2 22\" /> <path d=\"M17.488 15H9\" />",
+      "matches": "Skill",
+      "wire": [
+        "skill"
+      ]
+    },
+    "icon.tool.subagent": {
+      "glyph": "bot",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M12 8V4H8\" /> <rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\" /> <path d=\"M2 14h2\" /> <path d=\"M20 14h2\" /> <path d=\"M15 13v2\" /> <path d=\"M9 13v2\" />",
+      "matches": "Task · Agent",
+      "wire": [
+        "task",
+        "agent",
+        "subagent"
+      ]
+    },
+    "icon.tool.question": {
+      "glyph": "message-circle-question-mark",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\" /> <path d=\"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3\" /> <path d=\"M12 17h.01\" />",
+      "matches": "AskUserQuestion",
+      "wire": [
+        "askuserquestion"
+      ]
+    },
+    "icon.tool.todo": {
+      "glyph": "list-todo",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M13 5h8\" /> <path d=\"M13 12h8\" /> <path d=\"M13 19h8\" /> <path d=\"m3 17 2 2 4-4\" /> <rect x=\"3\" y=\"4\" width=\"6\" height=\"6\" rx=\"1\" />",
+      "matches": "TodoWrite",
+      "wire": [
+        "todowrite",
+        "todoread"
+      ]
+    },
+    "icon.tool.mcp": {
+      "glyph": "plug",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M12 22v-5\" /> <path d=\"M15 8V2\" /> <path d=\"M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z\" /> <path d=\"M9 8V2\" />",
+      "matches": "mcp__&lt;server&gt;__&lt;tool&gt;",
+      "wire": [],
+      "prefix": "mcp__"
+    },
+    "icon.tool.unknown": {
+      "glyph": "wrench",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z\" />",
+      "matches": "anything unmatched",
+      "wire": []
+    },
+    "icon.agent.thinking": {
+      "glyph": "brain",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M12 18V5\" /> <path d=\"M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4\" /> <path d=\"M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5\" /> <path d=\"M17.997 5.125a4 4 0 0 1 2.526 5.77\" /> <path d=\"M18 18a4 4 0 0 0 2-7.464\" /> <path d=\"M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517\" /> <path d=\"M6 18a4 4 0 0 1-2-7.464\" /> <path d=\"M6.003 5.125a4 4 0 0 0-2.526 5.77\" />",
+      "matches": "reasoning.* · think"
+    },
+    "icon.agent.approval": {
+      "glyph": "shield-check",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\" /> <path d=\"m9 12 2 2 4-4\" />",
+      "matches": "approval.request"
+    },
+    "icon.agent.secret": {
+      "glyph": "key",
+      "source": "lucide",
+      "license": "mit-feather",
+      "svg": "<path d=\"m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4\" /> <path d=\"m21 2-9.6 9.6\" /> <circle cx=\"7.5\" cy=\"15.5\" r=\"5.5\" />",
+      "matches": "secret prompt"
+    },
+    "icon.agent.sudo": {
+      "glyph": "shield-alert",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\" /> <path d=\"M12 8v4\" /> <path d=\"M12 16h.01\" />",
+      "matches": "sudo prompt"
+    },
+    "icon.agent.voice": {
+      "glyph": "mic",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M12 19v3\" /> <path d=\"M19 10v2a7 7 0 0 1-14 0v-2\" /> <rect x=\"9\" y=\"2\" width=\"6\" height=\"13\" rx=\"3\" />",
+      "matches": "mic · source=voice"
+    },
+    "icon.agent.attachment": {
+      "glyph": "paperclip",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551\" />",
+      "matches": "image.attach_bytes · file.attach"
+    },
+    "icon.agent.schedule": {
+      "glyph": "alarm-clock",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<circle cx=\"12\" cy=\"13\" r=\"8\" /> <path d=\"M12 9v4l2 2\" /> <path d=\"M5 3 2 6\" /> <path d=\"m22 6-3-3\" /> <path d=\"M6.38 18.7 4 21\" /> <path d=\"M17.64 18.67 20 21\" />",
+      "matches": "cron · scheduled run"
+    },
+    "icon.agent.plugin": {
+      "glyph": "puzzle",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z\" />",
+      "matches": "plugin"
+    },
+    "icon.agent.error": {
+      "glyph": "circle-alert",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <line x1=\"12\" x2=\"12\" y1=\"8\" y2=\"12\" /> <line x1=\"12\" x2=\"12.01\" y1=\"16\" y2=\"16\" />",
+      "matches": "errored tool / subagent"
+    },
+    "icon.agent.done": {
+      "glyph": "check",
+      "source": "lucide",
+      "license": "mit-feather",
+      "svg": "<path d=\"M20 6 9 17l-5-5\" />",
+      "matches": "complete"
+    },
+    "icon.ui.archive": {
+      "glyph": "archive",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<rect width=\"20\" height=\"5\" x=\"2\" y=\"3\" rx=\"1\" /> <path d=\"M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8\" /> <path d=\"M10 12h4\" />",
+      "matches": "archived sessions · the pre-daemon archive corpus"
+    },
+    "icon.ui.chat": {
+      "glyph": "message-circle",
+      "source": "lucide",
+      "license": "isc",
+      "svg": "<path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\" />",
+      "matches": "quick chat (a session in no workspace)"
+    },
+    "icon.ui.find": {
+      "glyph": "search",
+      "source": "lucide",
+      "license": "mit-feather",
+      "svg": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />",
+      "matches": "find-in-conversation · in-app search affordance"
+    }
+  }
+}

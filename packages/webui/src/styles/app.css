@@ -1,0 +1,1171 @@
+/* app.css — layout + component styling for the webui, all on marmalade tokens.
+ * No hardcoded palette hexes (skill rule): every color reads a --token from
+ * marmalade.css, so light/dark swaps happen for free. */
+
+.mm-app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "topbar topbar"
+    "rail main";
+  height: 100%;
+}
+
+/* Mobile chat back bar — a single-pane affordance, hidden on desktop
+ * (shown only inside the @media block below). */
+.mm-chat-mobilebar {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.mm-chat-mobilebar-title {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Top bar ─────────────────────────────────────────────────────────────── */
+.mm-topbar {
+  grid-area: topbar;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.mm-topbar .mm-wordmark {
+  font-size: 20px;
+}
+.mm-tabs {
+  display: flex;
+  gap: 4px;
+}
+.mm-tab {
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  padding: 6px 12px;
+  border-radius: var(--radius-field);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+.mm-tab:hover {
+  background: var(--surface-raised);
+}
+.mm-tab[aria-selected="true"] {
+  background: var(--tab-active);
+  color: var(--tab-active-ink);
+}
+.mm-tab:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.mm-status-dot {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+.mm-status-dot .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--warning);
+}
+.mm-status-dot.connected .dot {
+  background: var(--success);
+}
+.mm-status-dot.disconnected .dot {
+  background: var(--error);
+}
+
+/* ── Rail ────────────────────────────────────────────────────────────────── */
+.mm-rail {
+  grid-area: rail;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+  overflow-y: auto;
+  padding: 8px;
+}
+.mm-rail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px;
+  border-radius: var(--radius-box);
+  cursor: pointer;
+}
+.mm-rail-row:hover {
+  background: var(--surface-raised);
+}
+.mm-rail-row[aria-selected="true"] {
+  background: var(--surface-raised);
+  outline: 1.5px solid var(--border);
+}
+.mm-rail-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.mm-rail-title .run-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink-dim);
+  flex: none;
+}
+.mm-rail-title .run-dot.running {
+  background: var(--success);
+}
+.mm-rail-sub {
+  font-size: 12px;
+  color: var(--ink-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mm-unread {
+  margin-left: auto;
+  background: var(--chip-selected);
+  color: var(--chip-selected-ink);
+  border-radius: 999px;
+  padding: 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.mm-rail-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* The pinned "Assistant" (main session) section at the top of the rail — set
+ * off from the normal list by a divider below it. */
+.mm-assistant-pin {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+/* The "Assistant" chip on the main-session row. */
+.mm-main-chip {
+  background: var(--chip-selected);
+  color: var(--chip-selected-ink);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+/* ── Workspace groups (rail) ─────────────────────────────────────────────── */
+.mm-ws-group {
+  margin-bottom: 8px;
+}
+.mm-ws-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px 2px;
+}
+.mm-ws-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+.mm-ws-caret {
+  color: var(--ink-dim);
+  flex: none;
+}
+.mm-ws-emoji {
+  flex: none;
+}
+.mm-ws-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mm-ws-count {
+  color: var(--ink-dim);
+  font-weight: 500;
+  font-size: 12px;
+}
+.mm-ws-branch {
+  font-size: 11px;
+  color: var(--ink-dim);
+  white-space: nowrap;
+  flex: none;
+}
+.mm-ws-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 2px 8px 6px;
+}
+
+/* ── Main / chat ─────────────────────────────────────────────────────────── */
+.mm-main {
+  grid-area: main;
+  display: flex;
+  min-width: 0;
+}
+.mm-chat {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  /* the jump pill floats over the transcript */
+  position: relative;
+}
+.mm-chat-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mm-bubble {
+  max-width: 72ch;
+  padding: 10px 14px;
+  border-radius: var(--radius-bubble);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.mm-bubble.user {
+  align-self: flex-end;
+  background: var(--bubble-user);
+  color: var(--bubble-user-ink);
+  border-radius: 16px 16px 6px 16px;
+}
+.mm-bubble.assistant {
+  align-self: flex-start;
+  background: var(--bubble-bot);
+  color: var(--bubble-bot-ink);
+  border-radius: 16px 16px 16px 6px;
+}
+/* The match navigator's current position (open-at-seq deep link). A focus
+ * outline, not a background swap: the bubble keeps its own role color, and toast
+ * reads as "selected" in both modes (it's the chip-selected token). */
+.mm-bubble[data-focused="true"] {
+  outline: 2px solid var(--chip-selected);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--chip-selected) 22%, transparent);
+}
+
+/* A daemon-originated system line in the transcript (effort.clamped). Quiet by
+   design: centered, muted, no accent color, nothing interactive. */
+.mm-notice {
+  align-self: center;
+  max-width: 60ch;
+  padding: 2px 8px;
+  font-size: 12px;
+  color: var(--ink-dim);
+  text-align: center;
+}
+.mm-bubble p {
+  margin: 0 0 8px;
+}
+.mm-bubble p:last-child {
+  margin-bottom: 0;
+}
+/* session.steer marker on a mid-turn user bubble. */
+.mm-steer-badge {
+  display: block;
+  font-size: 0.68em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+/* origin marker on a daemon-minted user bubble (source "cron"/"agent"). Same
+ * shape as the steer badge; both can appear on one bubble. */
+.mm-origin-badge {
+  display: block;
+  font-size: 0.68em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 4px;
+}
+.mm-code {
+  background: var(--code-panel);
+  color: var(--code-ink);
+  border-radius: var(--radius-field);
+  padding: 10px 12px;
+  overflow-x: auto;
+  margin: 8px 0;
+}
+.mm-code-head {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-dim);
+  margin-bottom: 6px;
+}
+
+/* ── Tool card ───────────────────────────────────────────────────────────── */
+.mm-tool {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-field);
+  margin: 6px 0;
+  font-size: 13px;
+  overflow: hidden;
+}
+.mm-tool summary {
+  cursor: pointer;
+  padding: 6px 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  list-style: none;
+}
+.mm-tool summary .tname {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.mm-tool summary .tdur {
+  margin-left: auto;
+  color: var(--ink-dim);
+}
+
+/* ── Composer ────────────────────────────────────────────────────────────── */
+.mm-composer {
+  border-top: 1px solid var(--border);
+  padding: 12px 16px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  /* Full-width rows (staged-attachment chips, send errors) wrap above the
+     textarea+buttons row. */
+  flex-wrap: wrap;
+}
+.mm-attach-chips {
+  flex-basis: 100%;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.mm-composer > .mm-hint {
+  flex-basis: 100%;
+}
+.mm-attach-remove {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 0 0 6px;
+  line-height: 1;
+}
+.mm-composer textarea {
+  flex: 1;
+  resize: none;
+  min-height: 44px;
+  max-height: 200px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-field);
+  font: inherit;
+  background: var(--surface);
+  color: var(--ink);
+}
+.mm-composer .meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Buttons + chips (marmalade variants) ────────────────────────────────── */
+.mm-btn {
+  border: none;
+  border-radius: var(--radius-field);
+  padding: 8px 14px;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--button);
+  color: var(--button-ink);
+}
+.mm-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.mm-btn.accent {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.mm-btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+.mm-btn.outline {
+  background: transparent;
+  color: var(--outline);
+  border: 1.5px solid var(--outline);
+}
+.mm-btn.small {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+/* Icons from the icon map (@marmalade/icons). They inherit ink via
+ * stroke="currentColor", so a chip's selected/unselected state recolors the
+ * glyph with the text — which is the whole reason the emoji had to go.
+ * `-0.15em` sits the glyph on the text's optical baseline in inline runs. */
+.mm-icon {
+  vertical-align: -0.15em;
+  flex: none;
+}
+.mm-chip {
+  border: none;
+  border-radius: var(--radius-chip);
+  padding: 4px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  background: var(--chip-unselected);
+  color: var(--chip-ink);
+}
+.mm-chip[aria-pressed="true"] {
+  background: var(--chip-selected);
+  color: var(--chip-selected-ink);
+  font-weight: 500;
+}
+
+/* ── Artifact panel ──────────────────────────────────────────────────────── */
+.mm-artifacts {
+  width: 420px;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+}
+.mm-artifacts-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+.mm-artifacts-body {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+}
+.mm-artifacts iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+  border-radius: var(--radius-field);
+}
+.mm-open-artifact {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* ── Settings ────────────────────────────────────────────────────────────── */
+.mm-settings {
+  padding: 24px;
+  overflow-y: auto;
+  max-width: 720px;
+}
+.mm-card {
+  background: var(--surface-raised);
+  border-radius: var(--radius-box);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.mm-card h2 {
+  margin: 0 0 12px;
+}
+.mm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.mm-field label {
+  font-size: 13px;
+  font-weight: 500;
+}
+.mm-field input[type="text"],
+.mm-field input[type="password"],
+.mm-field input[type="number"],
+.mm-field input[type="datetime-local"],
+.mm-field textarea,
+.mm-field select {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-field);
+  font: inherit;
+  background: var(--surface);
+  color: var(--ink);
+}
+/* Per-model thinking bounds (ModelsCard) — a collapsed summary row that opens
+   into the two-notch effort range. */
+.mm-bounds-row {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-field);
+  margin-top: 6px;
+}
+.mm-bounds-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.mm-bounds-head span:nth-child(2) {
+  margin-left: auto;
+}
+.mm-bounds-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 10px 10px;
+}
+.mm-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* One cron job in the scheduled-prompts list. Disabled jobs stay visible
+   (dimmed, never hidden) — their disable reason is load-bearing info. */
+.mm-cron-job {
+  border-top: 1px solid var(--border);
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mm-cron-job[data-enabled="false"] > :not(.mm-row) {
+  opacity: 0.6;
+}
+/* Inline caution/help text beside a control (e.g. the settings-export
+   credential warning). */
+.mm-hint {
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+.mm-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.mm-eventlog {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--code-panel);
+  color: var(--code-ink);
+  border-radius: var(--radius-field);
+  padding: 8px;
+  max-height: 280px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+/* ── Gated / empty states ────────────────────────────────────────────────── */
+.mm-gated {
+  padding: 32px;
+  color: var(--ink-dim);
+  max-width: 60ch;
+  line-height: 1.5;
+}
+.mm-gated h2 {
+  color: var(--ink);
+}
+.mm-empty {
+  padding: 32px;
+  color: var(--ink-dim);
+  text-align: center;
+  margin: auto;
+}
+
+/* ── Dynamic UI trees (marmalade-ui v1 — UiTreeView.tsx) ─────────────────── */
+.mm-ui-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 0;
+}
+.mm-ui-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mm-ui-row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.mm-ui-card {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-box);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mm-ui-card-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+.mm-ui-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2px 0;
+  width: 100%;
+}
+.mm-ui-text.style-headline {
+  font-size: 20px;
+  font-weight: 700;
+}
+.mm-ui-text.style-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.mm-ui-text.style-caption {
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+.mm-ui-text.color-primary {
+  color: var(--accent);
+}
+.mm-ui-text.color-success {
+  color: var(--success);
+}
+.mm-ui-text.color-warning {
+  color: var(--warning);
+}
+.mm-ui-text.color-error {
+  color: var(--error);
+}
+.mm-ui-list {
+  margin: 0;
+  padding-left: 20px;
+}
+.mm-ui-table {
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.mm-ui-table th,
+.mm-ui-table td {
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  text-align: left;
+}
+.mm-ui-alert {
+  border-radius: var(--radius-field);
+  padding: 10px 12px;
+  border-left: 3px solid var(--info);
+  background: var(--surface-sunken);
+}
+.mm-ui-alert.level-success {
+  border-left-color: var(--success);
+}
+.mm-ui-alert.level-warning {
+  border-left-color: var(--warning);
+}
+.mm-ui-alert.level-error {
+  border-left-color: var(--error);
+}
+.mm-ui-alert-title {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.mm-ui-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+.mm-ui-field input,
+.mm-ui-field select {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-field);
+  background: var(--surface);
+  color: var(--ink);
+}
+.mm-ui-label {
+  color: var(--ink-dim);
+  font-size: 12px;
+}
+.mm-ui-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.mm-ui-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mm-ui-progress progress {
+  width: 100%;
+  accent-color: var(--accent);
+}
+.mm-ui-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+.mm-ui-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ink-dim);
+}
+.mm-ui-status.state-active .mm-ui-status-dot {
+  background: var(--info);
+}
+.mm-ui-status.state-success .mm-ui-status-dot {
+  background: var(--success);
+}
+.mm-ui-status.state-error .mm-ui-status-dot {
+  background: var(--error);
+}
+.mm-ui-countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.mm-ui-countdown-time {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+.mm-ui-danger {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+/* ── Mobile / responsive (≤720px: single pane) ───────────────────────────── */
+@media (max-width: 720px) {
+  /* One content column. The rail and the chat both occupy the "main" area and
+     are toggled by data-mobile-view — a phone can't show both at once. */
+  .mm-app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "topbar"
+      "main";
+  }
+  .mm-rail { grid-area: main; border-right: none; }
+  .mm-main { grid-area: main; flex-direction: column; }
+  /* Hide the chat pane on the list view — but ONLY when a rail is present
+     (chat/editor tabs). Settings renders a lone .mm-main and must stay shown. */
+  .mm-app[data-mobile-view="list"] .mm-rail ~ .mm-main { display: none; }
+  .mm-app[data-mobile-view="chat"] .mm-rail { display: none; }
+
+  .mm-chat-mobilebar { display: flex; }
+
+  /* Top bar fits a phone: tighter spacing, smaller wordmark, dot-only status. */
+  .mm-topbar { gap: 8px; padding: 8px 12px; }
+  .mm-topbar .mm-wordmark { font-size: 17px; }
+  .mm-tab { padding: 6px 10px; }
+  .mm-status-dot { font-size: 0; }
+
+  .mm-composer { padding: 10px 12px; }
+  .mm-settings { padding: 16px; }
+
+  /* Artifacts stack under the chat instead of a fixed side panel. */
+  .mm-artifacts { width: 100%; border-left: none; border-top: 1px solid var(--border); }
+}
+
+/* Usage view (T2 #8): per-day token bars relative to the window's busiest day. */
+.mm-usage-days { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.mm-usage-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface-sunken);
+  margin-top: 4px;
+  overflow: hidden;
+}
+.mm-usage-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+  min-width: 2px;
+}
+
+/* Budget guardrail bar (T2 #8): today's total against the daily limit. The
+ * over state is loud — it means UNATTENDED (cron) turns are paused, never the
+ * user's own prompts. Rendered only when usage.summary.budget != null. */
+.mm-budget { margin-top: 16px; }
+.mm-budget-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.mm-budget-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--surface-sunken);
+  overflow: hidden;
+}
+.mm-budget-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--accent);
+  min-width: 2px;
+  transition: width 120ms ease;
+}
+.mm-budget.over .mm-budget-fill { background: var(--error); }
+.mm-budget.over .mm-budget-line { color: var(--error); font-weight: 600; }
+
+/* Fork (T2 #3): the "Branch from here" action row inside an assistant bubble. */
+.mm-msg-actions { margin-top: 6px; }
+
+/* The "branched from …" lineage chip on a session row — smaller than a normal
+ * chip, links back to the source. The .null variant is the deleted-source
+ * tri-state: dim + outlined + unclickable (design: null chip). */
+.mm-branched {
+  margin-top: 4px;
+  align-self: flex-start;
+  max-width: 100%;
+  font-size: 11px;
+  padding: 2px 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mm-branched.null {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--ink-dim);
+  cursor: default;
+}
+
+/* Non-blocking fork toast — floats above the composer, auto-dismisses. */
+.mm-toast {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 12px 8px;
+  padding: 8px 12px;
+  border-radius: var(--radius-field);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  font-size: 13px;
+}
+.mm-toast-close {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: var(--ink-dim);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ── Message search (SearchView / FindInConversation / SearchHitList) ──────
+ * The results list is the daemon's flat ranked page; the session header rows
+ * are purely visual grouping of CONSECUTIVE same-session hits, so indentation
+ * (not nesting) carries the relationship. */
+.mm-search {
+  padding: 20px 24px;
+  overflow-y: auto;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mm-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mm-search-bar input[type="text"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-field);
+  font: inherit;
+  background: var(--surface);
+  color: var(--ink);
+}
+.mm-search-sort {
+  display: flex;
+  gap: 4px;
+}
+.mm-search-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.mm-search-meta {
+  font-size: 12px;
+  color: var(--ink-dim);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+}
+.mm-hits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mm-hit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mm-hit-group-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.mm-hit-title {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mm-hit-age {
+  font-size: 12px;
+  color: var(--ink-dim);
+  margin-left: auto;
+}
+.mm-hit-ws {
+  cursor: inherit;
+}
+/* Hits indent under their session header — the grouping is visual only. */
+.mm-hit-group-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 14px;
+  border-left: 2px solid var(--border);
+}
+.mm-hit {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.mm-hit-snippet {
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1.45;
+}
+.mm-hit-snippet mark {
+  background: var(--chip-selected);
+  color: var(--chip-selected-ink);
+  border-radius: 3px;
+  padding: 0 1px;
+}
+.mm-hit-meta {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 11px;
+  color: var(--ink-dim);
+}
+.mm-hit-role {
+  font-weight: 600;
+}
+/* Peek: the whole (capped) message, expanded in place — recall, not navigation. */
+.mm-hit-peek {
+  margin-top: 4px;
+  padding: 10px 12px;
+  background: var(--surface-raised);
+  border-radius: var(--radius-box);
+}
+.mm-hit-peek-label {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  margin-bottom: 2px;
+}
+.mm-hit-peek-text {
+  white-space: pre-wrap;
+  line-height: 1.45;
+  font-size: 13px;
+}
+.mm-hit-peek-reply {
+  color: var(--ink-dim);
+  margin-bottom: 2px;
+}
+/* ── Archive corpus (search.corpus="archive" + search.archive) ─────────────
+ * The pre-daemon Claude Code history: a SEPARATE, read-only corpus. Years-old
+ * conversations must never masquerade as live sessions, so archive surfaces
+ * are marked structurally (dashed rules, sunken ground, an archive badge on
+ * every row) rather than by color alone — the app is warm-orange in both modes and a
+ * tint would read as decoration. */
+.mm-chip-archive[aria-pressed="true"] {
+  outline: 2px dashed var(--ink-dim);
+  outline-offset: 1px;
+}
+.mm-hit-archive {
+  cursor: inherit;
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--surface-sunken);
+  color: var(--ink-dim);
+  border: 1px dashed var(--border);
+}
+.mm-archive-banner {
+  padding: 10px 12px;
+  background: var(--surface-sunken);
+  border: 1px dashed var(--ink-dim);
+  border-radius: var(--radius-box);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-dim);
+}
+/* Every hit in archive mode sits on the sunken ground, so the difference is
+ * visible even after the banner scrolls away. */
+.mm-search[data-corpus="archive"] .mm-hit-group-body {
+  border-left-style: dashed;
+}
+.mm-search[data-corpus="archive"] .mm-hit-peek {
+  background: var(--surface-sunken);
+  border: 1px dashed var(--border);
+}
+
+/* The read-only viewer: the transcript, its provenance, and nothing to press. */
+.mm-archive {
+  padding: 20px 24px;
+  overflow-y: auto;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mm-archive-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mm-archive-meta {
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 8px;
+}
+.mm-archive-title {
+  margin: 0;
+  font-size: 18px;
+}
+.mm-archive-sub {
+  font-size: 12px;
+  color: var(--ink-dim);
+}
+.mm-archive-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mm-archive-stamp {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+/* Find-in-conversation sits above the transcript as a jump list (never inline
+ * highlighting — you pick the occurrence before losing your scroll position). */
+.mm-find {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  max-height: 45%;
+  overflow-y: auto;
+}
+
+/* ── Match navigator (open-at-seq deep link, lab 3 frame 1) ────────────────
+ * The query stays alive after the jump so ↑/↓ can walk this session's matches
+ * without a round-trip to the results list; ✕ drops back to a normal session
+ * view. It sits between the top bar and the transcript, in flow — a floating
+ * bar would cover the first bubble, which is often the one you jumped to. */
+.mm-matchnav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-raised);
+  font-size: 13px;
+}
+.mm-matchnav-q {
+  font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mm-matchnav-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-dim);
+}
+.mm-matchnav-hint {
+  font-size: 11px;
+  color: var(--ink-dim);
+}
+/* "jumped N messages back" — the honesty touch: a teleport must not read as a
+ * scroll bug. Transient, non-interactive, and never in the transcript's flow. */
+.mm-jump-pill {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-dim);
+  pointer-events: none;
+}

@@ -1,0 +1,43 @@
+{
+  "jsonrpc": "2.0",
+  "id": "127",
+  "result": {
+    "total": 2,
+    "hits": [
+      {
+        "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e",
+        "message_id": "Zt7Bv0Ln5Rq9",
+        "seq": 41,
+        "role": "user",
+        "ts": 1785996400000,
+        "snippet": "split the \ue000tokenizer\ue001 out of the parser",
+        "text": "split the tokenizer out of the parser",
+        "reply_text": "Done — the tokenizer now lives in its own module."
+      },
+      {
+        "session_id": "s_2b7e4c19-8a03-4f5d-91c6-7d2e8b4a0f31",
+        "message_id": "k3Jd8Qm2Xp1A",
+        "seq": 8,
+        "role": "assistant",
+        "ts": 1785992800000,
+        "snippet": "the \ue000tokenizer\ue001 keeps its own table",
+        "text": "the tokenizer keeps its own table"
+      }
+    ],
+    "sessions": {
+      "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e": {
+        "title": "parser refactor",
+        "workspace_id": "w_7c3d1e2f-4a5b-4c6d-8e9f-0a1b2c3d4e5f",
+        "archived": false,
+        "last_active": 1785996400000
+      },
+      "s_2b7e4c19-8a03-4f5d-91c6-7d2e8b4a0f31": {
+        "title": null,
+        "workspace_id": null,
+        "archived": true,
+        "last_active": 1785992800000,
+        "corpus": "archive"
+      }
+    }
+  }
+}

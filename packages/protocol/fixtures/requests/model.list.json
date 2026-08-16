@@ -1,0 +1,6 @@
+{
+  "jsonrpc": "2.0",
+  "id": "51",
+  "method": "model.list",
+  "params": {}
+}

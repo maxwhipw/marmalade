@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <cache-path name="apk_updates" path="updates/" />
+    <cache-path name="camera_images" path="camera_images/" />
+    <cache-path name="share_images" path="share_images/" />
+    <cache-path name="image_preview" path="image_preview/" />
+    <cache-path name="debug_logs" path="debug_logs/" />
+</paths>

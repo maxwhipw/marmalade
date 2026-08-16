@@ -1,0 +1,11 @@
+{
+  "jsonrpc": "2.0",
+  "id": "36",
+  "result": {
+    "topic": "parser refactor",
+    "summary": "Split the tokenizer out of the parser and added table-driven tests.",
+    "summary_updated_at": 1785999940000,
+    "lifecycle": "active",
+    "run_state": "idle"
+  }
+}

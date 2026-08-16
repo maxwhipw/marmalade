@@ -1,0 +1,10 @@
+{
+  "jsonrpc": "2.0",
+  "id": "47",
+  "method": "session.fork",
+  "params": {
+    "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e",
+    "at_message_id": "k3Jd8Qm2Xp1A",
+    "title": "alternate approach"
+  }
+}

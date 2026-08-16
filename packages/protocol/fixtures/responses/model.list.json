@@ -1,0 +1,29 @@
+{
+  "jsonrpc": "2.0",
+  "id": "52",
+  "result": {
+    "models": [
+      {
+        "id": "claude-opus-4-8",
+        "label": "Opus 4.8",
+        "description": "Most capable — agentic coding",
+        "effort_min": "medium"
+      },
+      {
+        "id": "claude-haiku-4-5",
+        "label": "Haiku 4.5",
+        "description": "Fastest — routine chores",
+        "effort_max": "medium"
+      }
+    ],
+    "default_model": "claude-opus-4-8",
+    "default_effort": "high",
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  }
+}

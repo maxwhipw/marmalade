@@ -1,0 +1,22 @@
+{
+  "jsonrpc": "2.0",
+  "id": "84",
+  "result": {
+    "servers": [
+      {
+        "name": "calendar",
+        "transport": "stdio",
+        "enabled": true,
+        "harness": "claude-code",
+        "command": "calendar-mcp --stdio"
+      },
+      {
+        "name": "docs",
+        "transport": "http",
+        "enabled": false,
+        "harness": "claude-code",
+        "url": "http://host.example:8080/mcp"
+      }
+    ]
+  }
+}

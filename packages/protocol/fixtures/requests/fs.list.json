@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "71",
+  "method": "fs.list",
+  "params": {
+    "path": "/home/user",
+    "show_hidden": false
+  }
+}

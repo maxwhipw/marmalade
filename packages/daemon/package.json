@@ -1,0 +1,37 @@
+{
+  "name": "@marmalade/daemon",
+  "version": "0.0.1",
+  "description": "marmaladed — gateway, session index + supervisor, harness adapters, policy. M0 skeleton.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "//exports": "Subpaths so a light consumer (the CLI's `marmalade secret`) can use the keyring + config modules WITHOUT loading dist/index.js, which pulls the agent SDK, node-pty and the whole daemon graph.",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    "./keyring": { "types": "./dist/keyring.d.ts", "default": "./dist/keyring.js" },
+    "./config": { "types": "./dist/config.d.ts", "default": "./dist/config.js" }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "marmaladed": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "MARMALADE_NAMING_MODEL= node --test --experimental-strip-types \"test/*.test.ts\"",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@agentclientprotocol/sdk": "0.14.1",
+    "@anthropic-ai/claude-agent-sdk": "0.3.207",
+    "@marmalade/protocol": "workspace:*",
+    "croner": "10.0.1",
+    "node-pty": "1.1.0",
+    "ws": "8.18.3",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/ws": "8.18.1",
+    "typescript": "5.9.3"
+  }
+}

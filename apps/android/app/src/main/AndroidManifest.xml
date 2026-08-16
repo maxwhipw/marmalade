@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Voice recognition -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Haptic feedback for voice activation -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Timer and alarm intents (normal permission, auto-granted) -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
+    <!-- Network communication -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Foreground service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Battery optimization exclusion request -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <!-- Keep CPU running even when screen is OFF -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Start service on boot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- mDNS / Wi-Fi discovery -->
+    <uses-permission
+        android:name="android.permission.NEARBY_WIFI_DEVICES"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- Location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- Camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- SMS -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!-- Contacts -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <!-- Calendar -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <!-- Photos / Media -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <!-- Motion / Activity Recognition -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <!-- App update (install APK) -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <!-- System Settings (Brightness, Volume) -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" tools:ignore="ProtectedPermissions" />
+
+    <!-- Optional hardware features -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <!-- Required to detect TTS engines and speech recognizer languages (Android 11+) -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+
+    <application
+        android:name="app.marmalade.android.MarmaladeApplication"
+        android:allowBackup="false"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Marmalade"
+        tools:targetApi="34">
+
+        <!-- Main Activity -->
+        <!-- adjustResize, NOT the unspecified default: with edge-to-edge
+             (enableEdgeToEdge sets decorFitsSystemWindows=false) the window
+             never resizes for the keyboard, so an UNSPECIFIED mode lets the
+             framework PAN the whole window up instead. That pushed the chat's
+             top bar off the top of the screen AND left a keyboard-sized gap
+             under the composer, because ChatScreen's own imePadding() had
+             already made room. adjustResize suppresses the pan and leaves the
+             inset handling to Compose, which is the only half that should own
+             it. -->
+        <activity
+            android:name="app.marmalade.android.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Marmalade"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- marmalade:// deep links — used by share intents from
+                 desktop / TUI (e.g. /blueprint <url>) to prefill the
+                 composer with a command. Matches the desktop client's
+                 onDeepLink handler (desktop-controller.tsx:299-304). -->
+            <intent-filter android:autoVerify="false">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="marmalade" />
+            </intent-filter>
+        </activity>
+
+        <!-- Settings Activity -->
+        <activity
+            android:name="app.marmalade.android.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Marmalade" />
+
+        <!-- Portrait QR Scanner Activity -->
+        <activity
+            android:name="app.marmalade.android.ui.PortraitCaptureActivity"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            tools:ignore="LockedOrientationActivity" />
+
+        <!-- Voice Interaction Service (Home button long press) -->
+        <service
+            android:name="app.marmalade.android.service.MarmaladeAssistantService"
+            android:exported="true"
+            android:permission="android.permission.BIND_VOICE_INTERACTION">
+            <meta-data
+                android:name="android.voice_interaction"
+                android:resource="@xml/voice_interaction_service" />
+            <intent-filter>
+                <action android:name="android.service.voice.VoiceInteractionService" />
+                <action android:name="android.intent.action.ASSIST" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="app.marmalade.android.service.MarmaladeAssistantSessionService"
+            android:permission="android.permission.BIND_VOICE_INTERACTION" />
+
+        <!-- Recognition Service (Required for VoiceInteraction) -->
+        <service
+            android:name="app.marmalade.android.service.MarmaladeAssistantRecognitionService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_RECOGNITION_SERVICE">
+            <intent-filter>
+                <action android:name="android.speech.RecognitionService" />
+            </intent-filter>
+        </service>
+
+        <!-- Session Foreground Service (prevents process freeze during conversation) -->
+        <service
+            android:name="app.marmalade.android.service.SessionForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+
+        <!-- Hotword Detection Service (Ambient Listening) -->
+        <service
+            android:name="app.marmalade.android.service.HotwordService"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
+
+        <!-- Model Download Service (STT model file downloads) -->
+        <service
+            android:name="app.marmalade.android.service.ModelDownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <!-- Node Foreground Service (device control + discovery) -->
+        <service
+            android:name="app.marmalade.android.service.NodeForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice|microphone|mediaProjection|location" />
+
+        <!-- Notification Listener Service -->
+        <service
+            android:name="app.marmalade.android.service.MarmaladeNotificationListenerService"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!-- FileProvider for APK installs -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Boot Receiver -->
+        <receiver
+            android:name="app.marmalade.android.receiver.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Install Result Receiver -->
+        <receiver
+            android:name="app.marmalade.android.receiver.InstallResultReceiver"
+            android:exported="false" />
+
+        <!-- Chat Notification Reply Receiver -->
+        <receiver
+            android:name="app.marmalade.android.notification.ChatNotificationReceiver"
+            android:exported="false" />
+
+        <!-- Chat Widget (Jetpack Glance) -->
+        <receiver
+            android:name="app.marmalade.android.widget.ChatWidgetReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/chat_widget_info" />
+        </receiver>
+
+        <!-- Chat Widget Configuration Activity -->
+        <activity
+            android:name="app.marmalade.android.widget.ChatWidgetConfigActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Marmalade">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

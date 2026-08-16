@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "60",
+  "result": {
+    "device_token": "mdev_ExampleDeviceBearerTokenValue",
+    "device_id": "handset-1",
+    "principal": "owner"
+  }
+}

@@ -1,0 +1,34 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# ── Secrets / personal state: defense-in-depth for open development ──
+# Nothing matching these may ever be committed; the keyring and all
+# credentials live OUTSIDE the repo (~/.marmalade, ~/.config, gopass).
+.env
+.env.*
+*.pem
+*.key
+*.keystore
+*.jks
+secrets/
+*.secret
+credentials.json
+.credentials
+*apppassword*
+config.local.*
+*.local.json
+*.local.toml
+
+# tsc incremental build cache
+*.tsbuildinfo
+
+# Phase 0 desktop-client voice spike (disposable Kotlin scratch project)
+spikes/
+
+# Session handoff doc — local working state, not part of the release
+HANDOFF.md
+
+# Local Claude Code config
+.claude/

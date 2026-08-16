@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marmalade</string>
+    <string name="notification_channel_name">Wake Word Service</string>
+    <string name="notification_channel_description">Always-on voice detection service</string>
+    <string name="notification_title">Marmalade</string>
+    <string name="notification_content">Say \"%s\" to activate</string>
+    <string name="default_session_title_format">Voice Session %s</string>
+    <string name="chat_session_title_format">Chat %s</string>
+    <string name="error_config_required">Please configure connection in Settings</string>
+    <string name="config_required">Configuration required</string>
+    <string name="error_gateway_not_connected">Gateway is not connected. Please check your connection settings.</string>
+    <string name="state_listening">Listening...</string>
+    <string name="state_processing">Processing...</string>
+    <string name="state_thinking">Thinking...</string>
+    <string name="state_speaking">Speaking...</string>
+    <string name="state_error">Error</string>
+    <string name="state_ready">Ready</string>
+    <string name="action_try_again">Try again</string>
+    <string name="error_speech_audio">Audio error</string>
+    <string name="error_speech_client">Client error</string>
+    <string name="error_speech_permissions">Insufficient permissions</string>
+    <string name="error_speech_network">Network error</string>
+    <string name="error_speech_timeout">Network timeout</string>
+    <string name="error_speech_no_match">No match found</string>
+    <string name="error_speech_busy">Recognition service busy - retrying</string>
+    <string name="error_speech_server">Server error</string>
+    <string name="error_speech_input_timeout">No speech input</string>
+    <string name="error_speech_unknown">Unknown error (%d)</string>
+    <string name="error_no_response">No response</string>
+    <string name="voice_reply_in_chat">Still working — the reply will show up in chat</string>
+    <string name="error_mic_busy">Microphone is in use. Try again in a moment.</string>
+    <string name="voice_termination_hint">Say “%1$s” to send</string>
+    <string name="error_network">Network error</string>
+    <string name="error_speech_general">Speech error</string>
+    <string name="error_no_recognition_result">No recognition result</string>
+    <string name="error_start_failed">Start error: %s</string>
+    <string name="notification_text">Say \"%s\" to activate</string>
+    <string name="settings_title">Settings</string>
+    <string name="webhook_url_label">Server URL</string>
+    <string name="webhook_url_hint">https://your-server</string>
+    <string name="auth_token_label">Auth Token (optional)</string>
+    <string name="auth_token_hint">Optional</string>
+    <string name="session_id_label">Session ID</string>
+    <string name="user_id_label">User ID</string>
+    <string name="save_button">Save</string>
+    <string name="test_connection_button">Test Connection</string>
+    <string name="hotword_enabled_label">Enable Wake Word Detection</string>
+
+    <string name="back_button">Back</string>
+    <string name="mic_permission_required">Microphone permission required</string>
+    <string name="processing">Processing…</string>
+    <string name="error_label">Error</string>
+    <string name="try_again_button">Try again</string>
+    <string name="ask_hint">Ask Marmalade...</string>
+    <string name="send_description">Send</string>
+    <string name="stop_description">Stop</string>
+    <string name="listening">Listening…</string>
+    <string name="thinking">Thinking…</string>
+    <string name="speaking">Speaking…</string>
+    <string name="preparing_speech">Preparing…</string>
+    <string name="ready">Ready</string>
+    <string name="error_no_webhook">Please configure HTTP connection</string>
+
+    <string name="error_speech">Speech recognition error</string>
+    
+    <!-- Main Screen -->
+    <string name="activation_methods">Activation Methods</string>
+    <string name="home_button">Home Button</string>
+    <string name="active">Active</string>
+    <string name="not_set">Not Set</string>
+    <string name="hotword_title">Wake Word: %s</string>
+    <string name="hotword_listening">Listening…</string>
+    <string name="hotword_tap_to_enable">Tap to enable</string>
+    <string name="disabled">Disabled</string>
+    <string name="open_chat">Open Chat</string>
+    <string name="setup_required">Setup Required</string>
+    <string name="permissions_required">Permissions required</string>
+    <string name="could_not_open_settings">Could not open settings</string>
+    <string name="hotword_started">Wake Word detection started</string>
+    <string name="hotword_stopped">Wake Word detection stopped</string>
+    <string name="wakeword_requires_connection_error">Please configure a HTTP connection in Settings before enabling Wake Word.</string>
+    <string name="saved">Saved</string>
+    
+    <!-- How to Use -->
+    <string name="how_to_use">How to Use</string>
+    <string name="got_it">Got it</string>
+    <string name="step_1">Long press Home or say \"%s\"</string>
+    <string name="step_2">Ask your question or request</string>
+    <string name="step_3">Marmalade reads the response aloud</string>
+    <string name="step_4">Continue conversation (session maintained)</string>
+    
+    <!-- Troubleshooting -->
+    <string name="assist_gesture_not_working">Assist Gesture Not Working?</string>
+    <string name="troubleshooting_intro">Even if set as default, some system features might override the long-press gesture.</string>
+    <string name="circle_to_search_title">Circle to Search (Overrides Long-Press)</string>
+    <string name="circle_to_search_desc">If holding the home button triggers a search screen:\n• Pixel: Settings → System → Navigation mode → Tap Gear icon → Turn off Circle to Search.\n• Samsung: Settings → Display → Navigation bar → Turn off Circle to Search.</string>
+    <string name="gesture_navigation_title">Gesture Navigation (Corner Swipe)</string>
+    <string name="gesture_navigation_desc">If you don\'t have a home button (swipe navigation), swipe up diagonally from either the bottom-left or bottom-right corner to launch the assistant.</string>
+    <string name="google_app_setting_title">Google App Setting</string>
+    <string name="google_app_setting_desc">Open Google App → Tap Profile → Settings → Google Assistant → General → Turn off \'Google Assistant\' if it still interferes.</string>
+    <string name="refresh_binding_title">Refresh Binding</string>
+    <string name="refresh_binding_desc">If status is \'Active\' but it still won\'t work, try changing \'Digital assistant app\' to \'None\' and then back to \'Marmalade\'.</string>
+    <string name="debug_force_start">Debug: Force Start Session</string>
+    
+    <!-- Settings Screen -->
+    <string name="connection">Connection</string>
+    <string name="voice">Voice</string>
+    <string name="wake_word">Wake Word</string>
+    <string name="voice_output">Voice Output</string>
+    <string name="voice_speed">Voice Speed</string>
+    <string name="voice_speed_range">Range: %1$s - %2$s</string>
+    <string name="tts_engine_label">TTS Engine</string>
+    <string name="tts_engine_auto">Auto (Default)</string>
+    <string name="tts_provider_label">TTS Provider</string>
+    <string name="tts_provider_local">Local TTS</string>
+    <string name="tts_provider_elevenlabs">ElevenLabs</string>
+    <string name="tts_provider_openai">OpenAI TTS</string>
+    <string name="tts_provider_voicevox">VOICEVOX</string>
+    <string name="elevenlabs_api_key_label">ElevenLabs API Key</string>
+    <string name="elevenlabs_voice_id_label">Voice ID</string>
+    <string name="elevenlabs_model_label">Model</string>
+    <string name="openai_api_key_label">OpenAI API Key</string>
+    <string name="openai_voice_label">Voice</string>
+    <string name="openai_model_label">Model</string>
+    <string name="voicevox_style_label">Character / Style</string>
+    <string name="read_ai_responses">Read AI responses aloud</string>
+    <string name="continuous_conversation">Continuous Conversation</string>
+    <string name="auto_start_mic">Auto-start mic after AI speaks</string>
+    <string name="resume_latest_session">Resume Latest Session</string>
+    <string name="resume_latest_session_desc">Continue previous conversation on activation</string>
+    <string name="speech_silence_timeout">Silence Timeout</string>
+    <string name="speech_silence_timeout_desc">Wait time after speech pause</string>
+    <string name="speech_language_label">Speech Language</string>
+    <string name="speech_language_desc">Language for voice recognition and responses</string>
+    <string name="display_language_label">Display Language</string>
+    <string name="display_language_desc">Language used for app screens</string>
+    <string name="display_language_system_default">System Default</string>
+    <string name="conversation_section">Conversation</string>
+    <string name="speech_language_system_default">System Default</string>
+    <string name="speech_language_loading">Loading languages…</string>
+    <string name="thinking_sound">Thinking Sound</string>
+    <string name="thinking_sound_desc">Play sound while AI is thinking</string>
+    <string name="activation_phrase">Activation Phrase</string>
+    <string name="custom_wake_word">Custom Wake Word</string>
+    <string name="custom_wake_word_hint">e.g., hey buddy</string>
+    <string name="custom_wake_word_help">Enter 2-3 English words, lowercase</string>
+    <string name="testing">Testing…</string>
+    <string name="connected">Connected!</string>
+    <string name="failed">Failed: %s</string>
+    <string name="error">Error: %s</string>
+    
+    <!-- Wake Word Presets -->
+    <string name="wake_word_hey_marmalade">Hey Marmalade</string>
+    <string name="wake_word_hey_assistant">Hey Assistant</string>
+    <string name="wake_word_jarvis">Jarvis</string>
+    <string name="wake_word_computer">Computer</string>
+    <string name="wake_word_custom">Custom…</string>
+    
+
+    <!-- Permission handling -->
+    <string name="mic_permission_rationale_title">Microphone Permission Required</string>
+    <string name="mic_permission_rationale_message">Wake word detection needs microphone access to listen for your voice command. Without this permission, wake word detection cannot work.\n\nPlease grant microphone permission on the next screen.</string>
+    <string name="mic_permission_denied_title">Microphone Permission Denied</string>
+    <string name="mic_permission_denied_message">Microphone permission was denied. Wake word detection requires microphone access to work.\n\nTo enable it:\n1. Tap \"Open Settings\" below\n2. Tap \"Permissions\"\n3. Enable \"Microphone\"\n4. Return to the app and try again</string>
+    <string name="mic_permission_denied_permanently">Microphone permission has been permanently denied. Please enable it in app settings to use wake word detection.</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Agent -->
+    <string name="default_agent_label">Default Agent</string>
+    <string name="default_agent_hint">main</string>
+    <string name="agent_selector">Agent</string>
+    <string name="agent_default">Default</string>
+
+    <!-- Session Foreground Service -->
+    <string name="notification_session_channel_name">Voice Session</string>
+    <string name="notification_session_title">Conversation in progress</string>
+    <string name="notification_session_content">Voice session is active</string>
+
+    <!-- Chat UI -->
+    <string name="conversations_title">Conversations</string>
+    <string name="new_chat">New Chat</string>
+    <string name="delete">Delete</string>
+    <string name="menu">Menu</string>
+    <string name="back">Back</string>
+    <string name="select_chat_type">Select Chat Type</string>
+    <string name="chat_type_gateway">Gateway Chat</string>
+    <string name="chat_type_http">HTTP Chat</string>
+
+    <!-- Session List -->
+    <string name="no_sessions">No conversations yet. Tap + to start a new one.</string>
+    <string name="session_name_label">Name</string>
+    <string name="session_name_hint">e.g. Work, Travel, Study</string>
+    <string name="create">Create</string>
+    <string name="delete_session_title">Delete conversation?</string>
+    <string name="delete_session_message">"%s" will be permanently deleted.</string>
+    <string name="rename_session">Rename</string>
+    <string name="rename_session_title">Rename conversation</string>
+    <string name="rename_session_hint">Conversation name</string>
+    <string name="save">Save</string>
+
+    <!-- Operator Offline Warning -->
+
+    <!-- Permission Errors -->
+    <string name="permission_error_title">Agent Selection Unavailable</string>
+    <string name="permission_error_desc">Agent list cannot be loaded without \'operator.read\' scope.</string>
+    <string name="permission_error_action">Tap to see details</string>
+    <string name="action_copy_error">Copy Error</string>
+    <string name="error_copied">Error copied to clipboard</string>
+    <string name="action_open_settings">Open Settings</string>
+
+    <!-- Hotword permission notification -->
+    <string name="notification_mic_permission_title">Microphone permission required</string>
+    <string name="notification_mic_permission_content">Tap to grant permission for wake word detection</string>
+
+    <!-- Hotword mic unavailable notification -->
+    <string name="notification_mic_unavailable_title">Microphone unavailable</string>
+    <string name="notification_mic_unavailable_content">Another app may be using the microphone, or check your device settings</string>
+
+    <!-- Permission status card -->
+    <string name="permissions_missing_title">Permissions Required</string>
+    <string name="permission_record_audio">Microphone</string>
+    <string name="permission_record_audio_desc">Required for voice input and wake word detection</string>
+    <string name="permission_post_notifications">Notifications</string>
+    <string name="permission_post_notifications_desc">Required to show hotword service status</string>
+    <string name="permission_grant">Grant</string>
+    <string name="permission_status_granted">Granted</string>
+    <string name="permission_status_denied">Denied</string>
+    <string name="permission_camera">Camera</string>
+    <string name="permission_location_fine">Precise Location</string>
+    <string name="permission_location_coarse">Coarse Location</string>
+    <string name="permission_notifications">Notifications</string>
+
+    <!-- Fix Request -->
+    <string name="fix_request_label">To fix, ask your AI:</string>
+    <string name="fix_request_message">Please grant \'operator.read\' scope to my current API token.</string>
+    <string name="action_ask_ai">Ask AI to Fix</string>
+
+    <!-- Pairing -->
+    <string name="pairing_required_title">Device Pairing Required</string>
+    <string name="pairing_required_desc">Your device is not yet approved by the server. Please run the following command on your server to approve it:</string>
+    <string name="pairing_copy_command">Copy Command</string>
+    <string name="pairing_command_copied">Command copied to clipboard</string>
+    <string name="pairing_device_id">Device ID: %s</string>
+    <string name="pairing_refresh_status">Refresh Status</string>
+    <string name="pairing_guide_title">How to approve this device:</string>
+    <string name="pairing_guide_step_1">1. Access your gateway server terminal.</string>
+    <string name="pairing_guide_step_2">2. Paste and run the Approve command.</string>
+    <string name="pairing_guide_step_3">3. Once the server says \"Device approved\", tap Refresh Status below.</string>
+
+    <!-- Support Section -->
+    <string name="language_section">Language</string>
+    <string name="support_section">Support</string>
+    <string name="report_issue">Report Issue</string>
+    <string name="report_issue_desc">Found a bug or have a feature request? Let us know on GitHub.</string>
+
+    <!-- Device Node & Capabilities -->
+    <string name="capabilities_title">Capabilities</string>
+    <string name="capability_camera">Camera</string>
+    <string name="capability_talk">Talk</string>
+    <string name="capability_location">Location</string>
+    <string name="diagnostics_title">Diagnostics</string>
+    <string name="setup_required_hint">Please configure connection in Settings</string>
+
+    <!-- Gateway Settings -->
+    <string name="settings_gateway_title">Gateway Connection</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="offline">Offline</string>
+    <string name="gateway_discovery_active">Discovery active...</string>
+    <string name="gateway_manual_connection">Manual Connection</string>
+    <string name="gateway_manual_desc">Connect to specific host/port</string>
+    <string name="gateway_host">Host</string>
+    <string name="gateway_port">Port</string>
+    <string name="gateway_port_error">Invalid port</string>
+    <string name="gateway_token">Token</string>
+    <string name="gateway_password">Password</string>
+    <string name="gateway_use_tls">Use TLS</string>
+    <string name="gateway_use_tls_desc">Use encrypted and secure connection</string>
+    <string name="gateway_invalid_params">Invalid host or port</string>
+    <string name="gateway_settings_applied">Settings applied</string>
+    <string name="apply">Apply</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="gateway_discovery_hint">Searching for gateway...</string>
+    <string name="gateway_connecting">Connecting…</string>
+    <string name="connect">Connect</string>
+    <string name="gateway_foreground_service">Foreground Service</string>
+    <string name="gateway_foreground_desc">Keep running in background</string>
+    <string name="gateway_use_node_chat">Use Gateway Chat</string>
+    <string name="gateway_use_node_chat_desc">Route chat via gateway</string>
+
+    <!-- Legacy Settings -->
+    <string name="settings_legacy_title">HTTP Connection</string>
+    <string name="settings_legacy_desc">Direct connection via HTTP</string>
+
+    <!-- Capability Cards (SMS & Screen) -->
+    <string name="capability_sms">SMS</string>
+    <string name="capability_screen">Screen</string>
+    <string name="capability_on">On</string>
+    <string name="capability_off">Off</string>
+    <string name="capability_screen_active">Active</string>
+
+    <!-- Screen Capture Explain Dialog -->
+    <string name="screen_capture_explain_title">Screen Capture</string>
+    <string name="screen_capture_explain_message">Screen capture lets the AI see your screen when asked. Your permission is required each session. The AI only captures when you explicitly ask it to.</string>
+    <string name="screen_capture_title">Start Screen Capture?</string>
+    <string name="screen_capture_message">This allows the AI to record your screen and understand what you are viewing.</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+
+    <!-- SMS Permission -->
+    <string name="permission_send_sms">SMS</string>
+    <string name="permission_send_sms_desc">Required for the AI to send text messages</string>
+
+    <!-- Canvas Debug Mode -->
+    <string name="canvas_debug_mode">Canvas Debug Overlay</string>
+    <string name="canvas_debug_mode_desc">Show a connection status overlay on the canvas screen</string>
+
+    <!-- Wake Word Sync -->
+    <string name="wake_word_sync_from_server">Get Wake Words from Gateway</string>
+    <string name="wake_word_sync_desc">Download wake words configured on the gateway server to this device.</string>
+    <string name="wake_word_sync_success">Wake words synced</string>
+    <string name="wake_word_sync_failed">Sync failed</string>
+
+    <!-- Location Mode Info -->
+    <string name="location_off">Off</string>
+    <string name="location_coarse">Coarse</string>
+    <string name="location_precise">Precise</string>
+    <string name="location_info_title">Location Accuracy Modes</string>
+    <string name="location_info_message">Off: AI cannot access your location.\n\nCoarse: City/neighborhood level. Uses less battery.\n\nPrecise: GPS accuracy. Higher battery usage.\n\nLong-press this card to see this info again.</string>
+
+    <!-- App Version -->
+    <string name="app_version">Version %s</string>
+
+    <!-- Status Indicators -->
+    <string name="status_online">ONLINE</string>
+    <string name="status_offline">OFFLINE</string>
+    <string name="status_operator_online_node_offline">Operator Online (Node Offline)</string>
+
+    <!-- Gateway Trust Dialog -->
+    <string name="gateway_trust_title">Trust this Gateway?</string>
+    <string name="gateway_trust_message">First-time TLS connection.\n\nVerify this SHA-256 fingerprint out-of-band before trusting:\n%s</string>
+    <string name="gateway_trust_confirm">Trust &amp; Connect</string>
+    <string name="gateway_fingerprint_label">SHA-256 Fingerprint:</string>
+
+    <!-- Gateway TLS Fingerprint Mismatch (Re-Trust) -->
+    <string name="gateway_tls_mismatch_banner">TLS fingerprint changed</string>
+    <string name="gateway_tls_mismatch_banner_desc">The gateway is presenting a new certificate. Verify before reconnecting.</string>
+    <string name="gateway_tls_mismatch_action">Re-verify TLS</string>
+    <string name="gateway_tls_mismatch_title">TLS fingerprint changed</string>
+    <string name="gateway_tls_mismatch_message">The gateway\'s TLS certificate is different from the one you trusted before.\n\nThis can happen for legitimate reasons — Tailscale or a reverse proxy rotating its certificate, the gateway being reinstalled, or self-signed certs being regenerated.\n\nIt can also indicate a man-in-the-middle attack. Verify the new fingerprint out-of-band (e.g. on the gateway machine itself) before trusting it.</string>
+    <string name="gateway_tls_mismatch_stored_label">Previously trusted:</string>
+    <string name="gateway_tls_mismatch_new_label">New fingerprint:</string>
+    <string name="gateway_tls_mismatch_trust">Trust new fingerprint</string>
+    <string name="gateway_tls_mismatch_copy_old">Copy stored fingerprint</string>
+    <string name="gateway_tls_mismatch_copy_new">Copy new fingerprint</string>
+    <string name="gateway_tls_mismatch_copied">Fingerprint copied</string>
+
+    <!-- Error Messages -->
+    <string name="gateway_not_connected">Not connected to gateway</string>
+    <string name="agents_fetch_failed">Connected, but failed to load agents</string>
+
+    <!-- Wake Word Mode (Settings) -->
+    <string name="wake_word_node_title">Gateway Wake Word</string>
+    <string name="wake_word_node_desc">Detects your wake word and sends a request to the AI gateway.</string>
+    <string name="wake_word_gateway_desc">This device listens for your wake word and sends a command to the gateway. Enter the words you want to say to activate the assistant.</string>
+    <string name="wake_word_node_foreground">App Open</string>
+    <string name="wake_word_node_foreground_desc">Listens only while Marmalade is open.</string>
+    <string name="wake_word_node_always">Always</string>
+    <string name="wake_word_node_always_desc">Continues listening in the background (uses a persistent notification).</string>
+    <string name="wake_word_classic_title">Vosk</string>
+    <string name="wake_word_engine_vosk">Vosk (Local)</string>
+    <string name="wake_words_label">Wake Words</string>
+    <string name="wake_words_placeholder">marmalade, hey marmalade</string>
+    <string name="wake_words_help">Comma-separated words that activate the assistant (e.g. "marmalade, hey marmalade")</string>
+    <string name="state_verify_fingerprint">Verify gateway TLS fingerprint…</string>
+    <string name="state_failed_fingerprint">Failed: can\'t read TLS fingerprint</string>
+
+    <!-- Hardcoded strings extracted to resources -->
+    <string name="connection_settings">Connection Settings</string>
+    <string name="tab_gateway">Gateway</string>
+    <string name="tab_http">HTTP</string>
+    <string name="gateway_configuration">Gateway Configuration</string>
+    <string name="http_api_configuration">HTTP API Configuration</string>
+    <string name="http_ignore_ssl_errors">Ignore SSL Certificate Errors</string>
+    <string name="http_ignore_ssl_errors_desc">Allow self-signed or invalid HTTPS certificates. Use only on trusted networks.</string>
+    <string name="http_ignore_ssl_errors_warning">⚠️ Security Risk: Disabling SSL verification makes your connection vulnerable to man-in-the-middle (MITM) attacks. An attacker on the same network could intercept or tamper with your data. Only enable this if you fully trust your network and cannot install a proper certificate.</string>
+    <string name="wakeword_connection_type">Voice Session Connection</string>
+    <string name="wakeword_connection_type_desc">Choose how the voice session (long-press Home) sends messages to the assistant.</string>
+    <string name="wakeword_use_gateway">Gateway</string>
+    <string name="wakeword_use_http">HTTP</string>
+    <string name="enter_session_name">Enter session name</string>
+    <string name="session_name_optional">Session Name (Optional)</string>
+    <string name="running_tools">Running tools</string>
+    <string name="scroll_to_bottom">Scroll to bottom</string>
+    <string name="hide_instructions">Hide Instructions</string>
+    <string name="show_instructions">Show Instructions</string>
+    <string name="diagnostic_engines">Engines</string>
+    <string name="diagnostic_app_permissions">App Permissions</string>
+    <string name="technical_details">Technical Details:</string>
+    <!-- Update Checker -->
+    <string name="check_for_updates">Check for Updates</string>
+    <string name="checking_update">Checking…</string>
+    <string name="update_available">New version (%s) available</string>
+    <string name="up_to_date">App is up to date</string>
+    <string name="update_action">Update</string>
+
+    <!-- Setup Guide -->
+
+    <!-- Setup Code Apply & HTTP Sync -->
+    <string name="http_use_gateway_url">Use Gateway URL</string>
+    <string name="setup_code_applied">Settings applied!</string>
+    <string name="setup_code_invalid_code">Invalid or incomplete setup code.</string>
+
+    <!-- Additional Setup Guide Strings -->
+    <string name="permission_camera_desc">Required for the AI to see your camera stream</string>
+    <string name="permission_location_desc">Required for the AI to know your location</string>
+
+    <!-- Credits Screen -->
+    <string name="credits_title">Credits</string>
+    <string name="credits_back_description">Back</string>
+    <string name="credits_oss_title">Open source licenses</string>
+    <string name="credits_oss_description">This application uses the following open source software:</string>
+    <string name="credits_support_kofi_button">Support the Developer</string>
+
+    <!-- TTS Provider Names and Descriptions -->
+    <string name="tts_provider_local_name">Local TTS</string>
+
+    <!-- TTS Error Messages -->
+    <string name="tts_error_not_initialized">Not initialized</string>
+    <string name="tts_error_stopped">Stopped</string>
+    <string name="tts_error_generic">An error occurred</string>
+
+    <!-- OpenAI Model Descriptions -->
+
+    <!-- VoiceVox Display Strings -->
+</resources>

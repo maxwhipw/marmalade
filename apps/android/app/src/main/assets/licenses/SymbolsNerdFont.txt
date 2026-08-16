@@ -1,0 +1,194 @@
+Symbols Nerd Font Mono — MIT, plus the licenses of the icon sets it aggregates
+==============================================================================
+
+res/font/symbols_nerd_font_mono_regular.ttf
+
+The terminal draws private-use-area icon glyphs (powerline separators,
+git/branch marks, file-type and distro logos) with this font — it is what
+makes real shell prompts (starship, powerlevel10k, opencode) render as
+icons instead of tofu.
+
+Bundled UNMODIFIED from the official Nerd Fonts release:
+
+  https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.4.0
+  asset NerdFontsSymbolsOnly.zip, file SymbolsNerdFontMono-Regular.ttf
+  sha256 f0f624d9b474bea1662cf7e862d44aebe1ae1f6c7f9cb7a0ca5d0e5ac9561c60
+
+The shipped file's own name table (nameID 0) reads:
+
+  Copyright (c) 2016, Ryan McIntyre
+
+and the LICENSE inside that release archive is the MIT text reproduced
+below. Nerd Fonts' root LICENSE states the same rule the aggregate rests
+on: "Source files not in folders containing an explicit license are
+using the MIT License (MIT)".
+
+
+THE FONT ITSELF — MIT
+---------------------
+
+Reproduced verbatim from the LICENSE file inside NerdFontsSymbolsOnly.zip
+(v3.4.0).
+
+The MIT License (MIT)
+
+Copyright (c) 2014 Ryan L McIntyre
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+THE AGGREGATED ICON SETS
+------------------------
+
+Symbols Nerd Font Mono merges thirteen upstream icon sets. Each keeps its
+own license; none is GPL, LGPL, non-commercial, or otherwise restricted
+against redistribution inside an application. Every license here is
+satisfied by attribution, which is what this file is.
+
+Each copyright line is copied verbatim from that set's own LICENSE file or
+from the name table of the source font in nerd-fonts v3.4.0
+`src/glyphs/`. Nerd Fonts' own inventory is at
+https://github.com/ryanoasis/nerd-fonts/blob/v3.4.0/license-audit.md .
+
+  Seti-UI + Custom  (src/glyphs/original-source.otf) — MIT
+    File-type icons. Two layers: the Seti icons are
+      Copyright (c) 2014 Jesse Weed
+      (https://github.com/jesseweed/seti-ui)
+    and the "Original" (_nf) additions are Nerd Fonts' own,
+      Copyright (c) 2014 Ryan L McIntyre
+      (https://github.com/ryanoasis/nerd-fonts)
+
+  Devicons  (src/glyphs/devicons/devicons.otf) — MIT
+    Copyright (c) 2015 konpa
+    (https://github.com/devicons/devicon)
+
+  Font Awesome Free 6 — icons CC BY 4.0, font files SIL OFL 1.1
+    Fonticons, Inc. (https://fontawesome.com)
+    Copyright (c) 2022 Fonticons, Inc., with Reserved Font Name
+    "Font Awesome".
+    CC BY 4.0 body: CC-BY-4.0.txt. OFL body: OFL-1.1.txt.
+
+  Font Awesome Extension  (src/glyphs/font-awesome-extension.ttf) — MIT
+    Copyright (c) 2017 André Luiz Gava
+    (https://github.com/AndreLZGava/font-awesome-extension)
+    An independent project, not FortAwesome/Font-Awesome.
+
+  Material Design Icons — Apache 2.0 (icons and fonts)
+    The Pictogrammers icon group (https://pictogrammers.com/)
+    (https://github.com/Templarian/MaterialDesign)
+    Apache 2.0 body and the Pictogrammers notice: Apache-2.0.txt.
+
+  Weather Icons — SIL OFL 1.1
+    Erik Flowers (https://github.com/erikflowers/weather-icons)
+    (upstream's OFL.txt ships with its copyright line unfilled — the
+    holder above is taken from the project itself)
+    License body: OFL-1.1.txt.
+
+  GitHub Octicons — MIT
+    Copyright (c) 2023 GitHub Inc.
+    (https://github.com/primer/octicons)
+
+  Font Logos, formerly Font Linux  (src/glyphs/font-logos.ttf) — Unlicense
+    Copyright (c) 2014-2024, Lukas W
+    (https://github.com/Lukas-W/font-logos)
+    Public-domain dedication; text below.
+
+  Powerline Symbols — MIT
+    Copyright 2013 Kim Silkebækken and other contributors
+    (https://github.com/powerline/powerline)
+
+  Powerline Extra Symbols — MIT
+    Copyright (c) 2016 Ryan L McIntyre
+    (https://github.com/ryanoasis/powerline-extra-symbols)
+
+  IEC Power Symbols  (src/glyphs/Unicode_IEC_symbol_font.otf) — MIT
+    Copyright (c) 2013 Joe Loughry
+    (https://github.com/jloughry/Unicode, https://unicodepowersymbol.com/)
+
+  Pomicons — SIL OFL 1.1
+    Copyright (c) 2021, Gabriele Lana gabriele.lana@gmail.com
+    with Reserved Font Name Pomicons.
+    (https://github.com/gabrielelana/pomicons)
+    License body: OFL-1.1.txt.
+
+  Codicons — CC BY 4.0
+    Microsoft Corporation
+    (https://github.com/microsoft/vscode-codicons)
+    License body: CC-BY-4.0.txt.
+
+The MIT sets above share one permission notice — the body reproduced
+earlier in this file — which applies to each of their copyright lines in
+turn.
+
+
+TRADEMARKS
+----------
+
+Many of these glyphs are brand marks (distro logos, product icons) and
+remain trademarks of their owners. Both Font Awesome and Font Logos state
+the same condition: use a brand icon only to refer to the company,
+product or service it depicts, never to imply endorsement. Marmalade uses
+them only as the terminal's rendering of whatever glyph the remote shell
+emits.
+
+
+A NOTE ON THE MIT / OFL OVERLAP
+-------------------------------
+
+Nerd Fonts distributes the merged font under MIT while some of its
+constituent glyph sets are OFL-1.1, whose clause 5 asks that the Font
+Software be distributed entirely under that license. Marmalade does not
+have to resolve that tension: the file is redistributed UNMODIFIED, under
+its original name, with every upstream copyright notice and license body
+carried alongside it. That satisfies MIT's notice requirement, OFL clause
+2 (notice and license travel with the font), and CC BY 4.0's attribution
+requirement at once. The font is not sold on its own (OFL clause 1) and
+no Reserved Font Name is reused (clause 3).
+
+
+THE UNLICENSE — Font Logos
+--------------------------
+
+Reproduced verbatim from
+https://github.com/Lukas-W/font-logos/blob/v1.3.0/LICENSE .
+
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <http://unlicense.org>

@@ -1,0 +1,25 @@
+{
+  "jsonrpc": "2.0",
+  "id": "104",
+  "result": {
+    "job": {
+      "job_id": "cj_9pQz1XcTd4Ry",
+      "name": "morning digest",
+      "session_id": "s_0a1b2c3d-4e5f-4a6b-8c9d-0e1f2a3b4c5d",
+      "prompt": "summarize overnight activity",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "tz": "UTC",
+        "stagger_ms": 300000
+      },
+      "enabled": true,
+      "created_at": 1785136000000,
+      "updated_at": 1785913600000,
+      "next_run_at": 1786003600000,
+      "last_run_at": 1785917200000,
+      "last_status": "ok",
+      "last_error": null
+    }
+  }
+}

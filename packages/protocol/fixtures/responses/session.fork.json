@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": "48",
+  "result": {
+    "session_id": "s_2b7e4c19-8a03-4f5d-91c6-7d2e8b4a0f31",
+    "forked_from": {
+      "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e",
+      "message_id": "k3Jd8Qm2Xp1A"
+    },
+    "full_context": true,
+    "warning": "the harness does not copy file-history snapshots into a fork"
+  }
+}

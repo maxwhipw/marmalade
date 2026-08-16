@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "85",
+  "method": "mcp.toggle",
+  "params": {
+    "name": "docs",
+    "enabled": true
+  }
+}

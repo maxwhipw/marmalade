@@ -1,0 +1,8 @@
+{
+  "jsonrpc": "2.0",
+  "id": "109",
+  "method": "cron.delete",
+  "params": {
+    "job_id": "cj_9pQz1XcTd4Ry"
+  }
+}

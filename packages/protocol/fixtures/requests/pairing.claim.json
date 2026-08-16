@@ -1,0 +1,10 @@
+{
+  "jsonrpc": "2.0",
+  "id": "59",
+  "method": "pairing.claim",
+  "params": {
+    "token": "ExampleBootstrapTokenValue0123456789abcd",
+    "device_id": "handset-1",
+    "platform": "android"
+  }
+}

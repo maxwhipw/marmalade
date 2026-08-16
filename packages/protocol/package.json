@@ -1,0 +1,26 @@
+{
+  "name": "@marmalade/protocol",
+  "version": "0.0.1",
+  "description": "Frozen gateway protocol v1 (JSON-RPC 2.0 envelope + negotiated hello handshake) — zod contracts + inferred types",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test --experimental-strip-types \"test/*.test.ts\""
+  },
+  "dependencies": {
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "24.10.1"
+  }
+}

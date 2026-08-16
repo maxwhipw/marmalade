@@ -1,0 +1,5 @@
+# Zig build intermediates. The .so the app actually ships is the copy committed
+# under prebuilt/jniLibs/ (see README "Build") — that is what keeps the Zig
+# toolchain off the Gradle build path.
+zig-out/
+.zig-cache/

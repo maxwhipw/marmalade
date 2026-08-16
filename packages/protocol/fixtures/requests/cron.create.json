@@ -1,0 +1,16 @@
+{
+  "jsonrpc": "2.0",
+  "id": "101",
+  "method": "cron.create",
+  "params": {
+    "session_id": "s_0a1b2c3d-4e5f-4a6b-8c9d-0e1f2a3b4c5d",
+    "prompt": "summarize overnight activity",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 7 * * *",
+      "tz": "UTC"
+    },
+    "name": "morning digest",
+    "enabled": true
+  }
+}

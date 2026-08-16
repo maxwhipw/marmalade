@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "id": "116",
+  "result": {
+    "attached": true,
+    "name": "notes.txt",
+    "path": "/tmp/marmalade-attachments/notes.txt",
+    "ref_path": "notes.txt",
+    "ref_text": "@file:notes.txt",
+    "uploaded": true
+  }
+}

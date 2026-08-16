@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "id": "117",
+  "result": {
+    "attached": true,
+    "name": "report.pdf",
+    "path": "/tmp/marmalade-attachments/report.pdf",
+    "ref_path": null,
+    "ref_text": null,
+    "uploaded": true
+  }
+}

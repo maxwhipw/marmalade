@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "120",
+  "method": "audio.transcribe",
+  "params": {
+    "audio_base64": "UklGRiQAAABXQVZFZm10IBAAAAABAAEAgD4AAAB9AAACABAAZGF0YQAAAAA=",
+    "mime": "audio/wav"
+  }
+}

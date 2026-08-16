@@ -1,0 +1,25 @@
+{
+  "jsonrpc": "2.0",
+  "id": "1",
+  "method": "hello",
+  "params": {
+    "protocolVersion": 1,
+    "client": {
+      "name": "marmalade-android",
+      "version": "0.9.0",
+      "capabilities": [
+        "streaming",
+        "approvals",
+        "secrets",
+        "offline-cache",
+        "stable-ids"
+      ],
+      "deviceId": "handset-1",
+      "platform": "android",
+      "tzOffset": 600
+    },
+    "auth": {
+      "token": "mdev_ExampleDeviceBearerTokenValue"
+    }
+  }
+}

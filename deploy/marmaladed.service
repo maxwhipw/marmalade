@@ -1,0 +1,31 @@
+# systemd USER unit for marmaladed (M0 skeleton).
+# Install: cp to ~/.config/systemd/user/, then
+#   systemctl --user daemon-reload && systemctl --user enable --now marmaladed
+#
+# SECURITY (Decision 5.5): this unit MUST NOT carry any provider token in its
+# environment — every child inherits the daemon env, so an OAuth/API token here
+# would defeat the allowlist guard. Metered keys come from the OS keyring at
+# spawn, into a dedicated per-authClass context, never from here.
+[Unit]
+Description=marmaladed — personal orchestrator daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# ADJUST THIS: path to your checkout's built daemon entrypoint.
+ExecStart=/usr/bin/env node %h/src/marmalade/packages/daemon/dist/index.js
+Restart=on-failure
+RestartSec=3
+# Explicitly minimal environment — no provider credentials (see note above).
+Environment=NODE_ENV=production
+# Dual-bind (M2 remote reach): loopback is ALWAYS bound; setting
+# MARMALADE_BIND_HOST to this machine's tailnet IPv4 ADDS a second listener
+# for remote token-auth devices (non-loopback connections require a paired
+# device token; 0.0.0.0/LAN binds are structurally refused). If the tailnet
+# interface isn't up yet at boot the daemon exits and Restart=on-failure
+# retries until tailscale is. Machine-specific — set your own tailnet IP:
+# Environment=MARMALADE_BIND_HOST=100.64.0.1
+
+[Install]
+WantedBy=default.target

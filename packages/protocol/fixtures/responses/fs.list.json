@@ -1,0 +1,21 @@
+{
+  "jsonrpc": "2.0",
+  "id": "72",
+  "result": {
+    "path": "/home/user",
+    "entries": [
+      {
+        "name": "coding",
+        "dir": true
+      },
+      {
+        "name": "documents",
+        "dir": true
+      },
+      {
+        "name": "notes.md",
+        "dir": false
+      }
+    ]
+  }
+}

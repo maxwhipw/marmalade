@@ -1,0 +1,7 @@
+{
+  "plugins": {
+    "deny": [
+      "vercel@claude-plugins-official"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "114",
+  "result": {
+    "attached": true,
+    "path": "/tmp/marmalade-attachments/screenshot.png",
+    "count": 1
+  }
+}

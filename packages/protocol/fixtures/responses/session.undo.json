@@ -1,0 +1,12 @@
+{
+  "jsonrpc": "2.0",
+  "id": "33",
+  "result": {
+    "last_message_id": "k3Jd8Qm2Xp1A",
+    "popped_message_ids": [
+      "Zt7Bv0Ln5Rq9",
+      "Yh4Wc6Tj2Ns8"
+    ],
+    "files_rewound": false
+  }
+}

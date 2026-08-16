@@ -1,0 +1,23 @@
+{
+  "jsonrpc": "2.0",
+  "method": "event",
+  "params": {
+    "type": "message.complete",
+    "payload": {
+      "subtype": "error_during_execution",
+      "is_error": true,
+      "message_id": "k3Jd8Qm2Xp1A",
+      "has_cut_point": false,
+      "seq": 54,
+      "ts": 1786000002100,
+      "origin": {
+        "user_id": "owner",
+        "device_id": "handset-1",
+        "platform": "android",
+        "source": "text",
+        "tz_offset": 600
+      }
+    },
+    "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e"
+  }
+}

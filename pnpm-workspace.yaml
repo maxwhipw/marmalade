@@ -1,0 +1,8 @@
+packages:
+  - packages/*
+
+# node-pty (terminal.* PTY backend) is a native module — its node-gyp build
+# script is the ONLY postinstall we allow; everything else stays blocked
+# (supply-chain posture: pnpm 10 default).
+onlyBuiltDependencies:
+  - node-pty

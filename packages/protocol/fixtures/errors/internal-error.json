@@ -1,0 +1,8 @@
+{
+  "jsonrpc": "2.0",
+  "id": "147",
+  "error": {
+    "code": -32603,
+    "message": "the harness adapter threw while spawning"
+  }
+}

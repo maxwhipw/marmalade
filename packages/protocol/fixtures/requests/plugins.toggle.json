@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "89",
+  "method": "plugins.toggle",
+  "params": {
+    "name": "scratch",
+    "enabled": true
+  }
+}

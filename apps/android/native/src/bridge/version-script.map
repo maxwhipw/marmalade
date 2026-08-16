@@ -1,0 +1,19 @@
+/* Adapted from chuchu (MIT) - zig-src/src/bridge/version-script.map
+ *
+ * Keeps the .so surface to the JNI entry points plus the two bionic shims
+ * chuchu_snapshot.zig defines (Android's libc has no shm_open/shm_unlink).
+ *
+ * Modified: nothing but this header.
+ *
+ * Copyright (c) 2026 jossephus - see native/licenses/chuchu.LICENSE
+ */
+{
+  global:
+    Java_*;
+    chuchu_*;
+    update_render_state;
+    shm_open;
+    shm_unlink;
+  local:
+    *;
+};

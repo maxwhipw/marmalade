@@ -1,0 +1,20 @@
+{"type":"card","title":"Trip planner","children":[
+  {"type":"text","text":"Where to?","style":"title","bold":true,"color":"primary"},
+  {"type":"divider"},
+  {"type":"row","children":[
+    {"type":"text_input","id":"dest","label":"Destination","placeholder":"Kyoto"},
+    {"type":"checkbox","id":"flex","label":"Flexible dates","checked":true}
+  ]},
+  {"type":"select","id":"season","label":"Season","options":[{"id":"spring","label":"Spring"},"summer"]},
+  {"type":"chip_group","id":"vibe","multi":true,"options":["onsen","food","temples"]},
+  {"type":"list","items":["pack light","bring cash"],"ordered":true},
+  {"type":"table","columns":["City","Days"],"rows":[["Kyoto","3"],["Nara","1"]]},
+  {"type":"code","code":"echo hi","language":"bash"},
+  {"type":"alert","text":"Peak season","level":"warning","title":"Heads up"},
+  {"type":"progress","value":0.5,"label":"Planning"},
+  {"type":"status","text":"Searching","state":"active"},
+  {"type":"countdown","seconds":90,"label":"Offer expires"},
+  {"type":"button","label":"Plan it","action":"callback","event":"plan","collect_from":["dest","season","vibe","flex"]},
+  {"type":"button","label":"Open map","action":"open_url","url":"https://maps.example"},
+  {"type":"button","label":"Copy","action":"copy_to_clipboard","text":"itinerary"}
+]}

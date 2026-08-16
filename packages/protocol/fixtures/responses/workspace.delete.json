@@ -1,0 +1,7 @@
+{
+  "jsonrpc": "2.0",
+  "id": "80",
+  "result": {
+    "deleted": true
+  }
+}

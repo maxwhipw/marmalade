@@ -1,0 +1,21 @@
+{
+  "jsonrpc": "2.0",
+  "id": "66",
+  "result": {
+    "skills": [
+      {
+        "name": "code-review",
+        "description": "Structured review of a working diff",
+        "enabled": true,
+        "harnesses": [
+          "claude-code"
+        ]
+      },
+      {
+        "name": "release-notes",
+        "enabled": false,
+        "harnesses": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "jsonrpc": "2.0",
+  "id": "55",
+  "method": "settings.update",
+  "params": {
+    "default_model": "claude-haiku-4-5",
+    "default_effort": null,
+    "model_efforts": {
+      "claude-opus-4-8": {
+        "min": "medium",
+        "max": "xhigh"
+      },
+      "claude-haiku-4-5": null
+    }
+  }
+}

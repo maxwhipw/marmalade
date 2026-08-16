@@ -1,0 +1,23 @@
+Marmalade Android client
+Copyright 2026 the Marmalade project
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Significant portions of this application are derived from
+openclaw-assistant, Copyright (c) 2026 yuga-hashimoto, licensed under
+the MIT License (full text: third_party/openclaw-assistant/LICENSE).
+The derived portions include the device-capability/node layer (SMS,
+camera, location, contacts, calendar, screen, notifications, and other
+handlers), the speech/TTS infrastructure, the foreground services, and
+substantial string resources including their localized translations.
+The chat UI, wire/RPC layer, terminal, and persistence layers are
+original to this project. A fuller inventory is in CREDITS.md ("Code"
+section).
+
+Terminal rendering derives from work by jossephus (chuchu) — see
+native/licenses/chuchu.LICENSE — and embeds Ghostty and other
+third-party components; see native/licenses/ and
+app/src/main/assets/licenses/ for the full texts.
+
+Bundled speech models and their training-data provenance are
+documented in CREDITS.md.

@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "description": "Binary assets stripped from git; restore with scripts/fetch-assets.sh",
+  "assets": [
+    {
+      "path": "app/src/main/assets/embedding_model.onnx",
+      "asset": "app-src-main-assets-embedding_model.onnx",
+      "bytes": 1326578,
+      "sha256": "70d164290c1d095d1d4ee149bc5e00543250a7316b59f31d056cff7bd3075c1f"
+    },
+    {
+      "path": "app/src/main/assets/marmalade.onnx",
+      "asset": "app-src-main-assets-marmalade.onnx",
+      "bytes": 415224,
+      "sha256": "4b8e4fddecea626d5fd617dab5258929b09fd387a2a4af87a1995cdfc6ec3ddb"
+    },
+    {
+      "path": "app/src/main/assets/melspectrogram.onnx",
+      "asset": "app-src-main-assets-melspectrogram.onnx",
+      "bytes": 1087958,
+      "sha256": "ba2b0e0f8b7b875369a2c89cb13360ff53bac436f2895cced9f479fa65eb176f"
+    },
+    {
+      "path": "app/src/main/assets/openclaw.onnx",
+      "asset": "app-src-main-assets-openclaw.onnx",
+      "bytes": 415224,
+      "sha256": "0fb13d814b6c294968a1936451b359fe02a16ffdcd9f388b3ee222805c7a1e33"
+    },
+    {
+      "path": "app/src/main/assets/silero_vad.onnx",
+      "asset": "app-src-main-assets-silero_vad.onnx",
+      "bytes": 643854,
+      "sha256": "9e2449e1087496d8d4caba907f23e0bd3f78d91fa552479bb9c23ac09cbb1fd6"
+    },
+    {
+      "path": "app/src/main/assets/stt/distil-small.en-decoder.int8.onnx",
+      "asset": "app-src-main-assets-stt-distil-small.en-decoder.int8.onnx",
+      "bytes": 195079097,
+      "sha256": "3074092bca078786ecda9c9e88449f14e9ebde1d60be4d41de8cacda55e065e0"
+    },
+    {
+      "path": "app/src/main/assets/stt/distil-small.en-encoder.int8.onnx",
+      "asset": "app-src-main-assets-stt-distil-small.en-encoder.int8.onnx",
+      "bytes": 102961431,
+      "sha256": "397a76d2308c2c1ec91a4ecc12f20fede69bb17be41a1cef050993520328beca"
+    },
+    {
+      "path": "libs/sherpa-onnx-1.12.32.aar",
+      "asset": "libs-sherpa-onnx-1.12.32.aar",
+      "bytes": 46589150,
+      "sha256": "43450d480eda70de929be82711851e8e91d82ea640f7d2296c1f6526fd792cad"
+    },
+    {
+      "path": "libs/sherpa-onnx-static-link-onnxruntime-1.12.32.aar",
+      "asset": "libs-sherpa-onnx-static-link-onnxruntime-1.12.32.aar",
+      "bytes": 34749136,
+      "sha256": "4e9444d674314f98993037a55a8a65b8cf6e9a658be5cf57cb3de3feb6dea382"
+    },
+    {
+      "path": "native/prebuilt/jniLibs/arm64-v8a/libmarmalade_term.so",
+      "asset": "native-prebuilt-jniLibs-arm64-v8a-libmarmalade_term.so",
+      "bytes": 924600,
+      "sha256": "7eaa56debf9e06e1e8971f46fe2a5b6860b5bfc1c3213c8701a9662e0cd7b32a"
+    },
+    {
+      "path": "native/prebuilt/jniLibs/x86_64/libmarmalade_term.so",
+      "asset": "native-prebuilt-jniLibs-x86_64-libmarmalade_term.so",
+      "bytes": 993056,
+      "sha256": "0c1d3107f6321380bc429a0d2f93285fc83db44c4f2a44cb2ea167ac2c5914ca"
+    }
+  ]
+}

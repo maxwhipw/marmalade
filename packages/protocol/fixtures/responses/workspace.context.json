@@ -1,0 +1,17 @@
+{
+  "jsonrpc": "2.0",
+  "id": "82",
+  "result": {
+    "workspace_id": "w_7c3d1e2f-4a5b-4c6d-8e9f-0a1b2c3d4e5f",
+    "claude_md": {
+      "content": "# Example\n\nBuild with `make`.\n",
+      "truncated": false
+    },
+    "agents_md": null,
+    "memory": [
+      "decisions.md",
+      "glossary.md"
+    ],
+    "git_branch": "main"
+  }
+}

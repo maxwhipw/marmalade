@@ -1,0 +1,6 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "outDir": "dist", "rootDir": "src", "composite": true },
+  "references": [{ "path": "../protocol" }, { "path": "../ui-tree" }, { "path": "../daemon" }],
+  "include": ["src/**/*"]
+}

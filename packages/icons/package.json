@@ -1,0 +1,25 @@
+{
+  "name": "@marmalade/icons",
+  "version": "0.0.1",
+  "description": "The Marmalade icon map — one named glyph vocabulary (icon.tool.* / icon.agent.* / icon.ui.*) shared by every client surface. Deliberately NOT part of the protocol: icons must never be able to break a handshake.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "src/map.json", "LICENSE.lucide"],
+  "scripts": {
+    "generate": "node --experimental-strip-types scripts/generate.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test --experimental-strip-types \"test/*.test.ts\""
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "24.10.1"
+  }
+}

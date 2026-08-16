@@ -1,0 +1,10 @@
+{
+  "jsonrpc": "2.0",
+  "id": "130",
+  "method": "terminal.create",
+  "params": {
+    "cols": 100,
+    "rows": 30,
+    "cwd": "/home/user/coding/example"
+  }
+}

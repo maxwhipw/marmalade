@@ -1,0 +1,21 @@
+{
+  "jsonrpc": "2.0",
+  "id": "88",
+  "result": {
+    "plugins": [
+      {
+        "name": "review-tools",
+        "enabled": true,
+        "harness": "claude-code",
+        "source": "example-marketplace",
+        "version": "1.2.0",
+        "description": "Review helpers"
+      },
+      {
+        "name": "scratch",
+        "enabled": false,
+        "harness": "claude-code"
+      }
+    ]
+  }
+}

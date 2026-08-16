@@ -1,0 +1,8 @@
+{
+  "jsonrpc": "2.0",
+  "id": "63",
+  "method": "device.revoke",
+  "params": {
+    "device_id": "workstation"
+  }
+}

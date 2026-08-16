@@ -1,0 +1,278 @@
+/*
+ * Marmalade Design Scheme v0 — plain-CSS token layer for the webui.
+ *
+ * Derived from the Marmalade Design Scheme reference stylesheet, which ships
+ * the tokens as DaisyUI `@plugin "daisyui/theme"` blocks, which only resolve
+ * under Tailwind v4 + DaisyUI. The webui deliberately runs NO Tailwind (spec
+ * "Branding": plain CSS with the tokens is fine and simpler), so the palette is
+ * re-expressed here as CSS custom properties on [data-theme]. The hex values,
+ * the mode-aware swaps, and the "never do this" rules are copied verbatim from
+ * the reference — this file is the token contract, not a reinterpretation.
+ *
+ * Mode is selected by the <html data-theme> attribute, written by the settings
+ * appearance provider (system|light|dark). Every color below is from the
+ * marmalade amber/cream/stone family — never invent a shade (skill anti-pattern).
+ */
+
+/* ── Self-hosted webfonts ─────────────────────────────────────────────────
+ * Loaded from disk, not from a third-party CDN: an @import of fonts.googleapis
+ * .com would make every webui load phone home to Google and leak the user's IP
+ * and User-Agent. The woff2 files below are the upstream Google Fonts builds
+ * (latin + latin-ext subsets), vendored under ./fonts/ and licensed OFL-1.1 —
+ * see THIRD-PARTY-NOTICES.md. Paths are relative so the bundle still resolves
+ * from a file:// WebView (see vite.config.ts `base: "./"`).
+ *
+ * "Momo Trust Display" (the wordmark face) is NOT redistributable from a public
+ * font CDN, so it is intentionally not vendored: it renders when installed on
+ * the host and otherwise falls back to Fredoka, which is bundled. */
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("./fonts/manrope-200_800-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("./fonts/manrope-200_800-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./fonts/fredoka-300_700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./fonts/fredoka-300_700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/space-mono-400-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/space-mono-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/space-mono-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/space-mono-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./fonts/geist-mono-100_900-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./fonts/geist-mono-100_900-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ── Light mode (default) ─────────────────────────────────────────────────── */
+[data-theme="marmalade"] {
+  color-scheme: light;
+
+  --font-body: "Manrope", "Inter", system-ui, sans-serif;
+  --font-wordmark: "Momo Trust Display", "Fredoka", sans-serif;
+  --font-heading: var(--font-body);
+  --font-mono: "Space Mono", "Geist Mono", ui-monospace, monospace;
+
+  /* surfaces */
+  --surface: #fff7ed; /* warm stone — page bg */
+  --surface-raised: #ffedd5; /* cream — cards, agent bubble */
+  --surface-sunken: #f5f5f4; /* stone soft — code panel, insets */
+  --ink: #1c1917;
+  --ink-dim: #7c2d12;
+  --border: #e7d8c4;
+
+  /* brand — orange is precious (light only) */
+  --accent: #f97316; /* orange */
+  --accent-ink: #ffffff;
+  --wordmark: #f97316;
+
+  /* default (non-shouty) button = toast */
+  --button: #fed7aa;
+  --button-ink: #7c2d12;
+
+  /* outlined button = rich brown border/text in light */
+  --outline: #422006;
+
+  /* chips */
+  --chip-selected: #fed7aa; /* toast */
+  --chip-selected-ink: #7c2d12;
+  --chip-unselected: #ffedd5; /* cream */
+  --chip-ink: #1c1917; /* chip bg is light in both modes — dark text always wins */
+
+  /* active top-bar tab = orange in light */
+  --tab-active: #f97316;
+  --tab-active-ink: #ffffff;
+
+  /* message bubbles */
+  --bubble-user: #fdba74; /* peach — both modes */
+  --bubble-user-ink: #422006;
+  --bubble-bot: #ffedd5; /* cream in light */
+  --bubble-bot-ink: #1c1917;
+
+  /* code block: light panel + light syntax theme (skill: match luminance) */
+  --code-panel: #f5f5f4;
+  --code-ink: #1c1917;
+
+  /* semantic state */
+  --info: #2563eb;
+  --success: #16a34a;
+  --warning: #d97706;
+  --error: #c2410c;
+
+  /* shape scale — generous radii, marmalade-android matched */
+  --radius-chip: 12px;
+  --radius-field: 12px;
+  --radius-box: 16px;
+  --radius-bubble: 16px;
+}
+
+/* ── Dark mode ────────────────────────────────────────────────────────────── */
+/* Derived from the light → dark mapping in SKILL.md "Mode-aware swaps". Orange
+ * appears on NOTHING in dark (anti-pattern #1); every orange surface swaps for
+ * its softer cousin. Background is stone deep (never amber-brown). */
+[data-theme="marmalade-dark"] {
+  color-scheme: dark;
+
+  --font-body: "Manrope", "Inter", system-ui, sans-serif;
+  --font-wordmark: "Momo Trust Display", "Fredoka", sans-serif;
+  --font-heading: var(--font-body);
+  --font-mono: "Space Mono", "Geist Mono", ui-monospace, monospace;
+
+  --surface: #1c1917; /* stone deep — neutral-warm, never amber-brown */
+  --surface-raised: #262626;
+  --surface-sunken: #0d0d0d;
+  --ink: #f5f5f4;
+  --ink-dim: #d1b8a0;
+  --border: #33302c;
+
+  /* accent swaps orange → rich brown */
+  --accent: #422006;
+  --accent-ink: #fed7aa;
+  --wordmark: #ffedd5; /* cream in dark */
+
+  --button: #fed7aa; /* toast holds across modes */
+  --button-ink: #7c2d12;
+
+  --outline: #ffedd5; /* cream border/text in dark */
+
+  --chip-selected: #fed7aa; /* toast */
+  --chip-selected-ink: #7c2d12;
+  --chip-unselected: #fef3c7; /* soft pastel — cream reads as white on dark */
+  --chip-ink: #1c1917; /* still dark: chip bg is light in both modes */
+
+  --tab-active: #fed7aa; /* toast, not orange (candy-corn anti-pattern) */
+  --tab-active-ink: #7c2d12;
+
+  --bubble-user: #fdba74; /* peach — unchanged */
+  --bubble-user-ink: #422006;
+  --bubble-bot: #292524; /* stone 800 elevated surface (reworked 2026-07-04) */
+  --bubble-bot-ink: #f5f5f4;
+
+  --code-panel: #0d0d0d; /* near-black + dark syntax theme */
+  --code-ink: #d4edba;
+
+  --info: #60a5fa;
+  --success: #4ade80;
+  --warning: #fb923c;
+  --error: #f87171;
+
+  --radius-chip: 12px;
+  --radius-field: 12px;
+  --radius-box: 16px;
+  --radius-bubble: 16px;
+}
+
+/* ── Base element styling ─────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: calc(14px * var(--font-scale, 1));
+  background: var(--surface);
+  color: var(--ink);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: 1.04em; /* the +2px parity tweak — Space Mono renders small */
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+h2 {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+/* Wordmark — always lowercase, mode-aware color (skill hard rule). */
+.mm-wordmark {
+  font-family: var(--font-wordmark);
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0;
+  color: var(--wordmark);
+}

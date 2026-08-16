@@ -1,0 +1,27 @@
+{
+  "jsonrpc": "2.0",
+  "id": "129",
+  "result": {
+    "session": {
+      "title": null,
+      "cwd": "/home/user/coding/example",
+      "last_active": 1754464000000,
+      "message_count": 214
+    },
+    "total": 214,
+    "messages": [
+      {
+        "ordinal": 0,
+        "role": "user",
+        "ts": 1754464000000,
+        "text": "how does the tokenizer table work"
+      },
+      {
+        "ordinal": 1,
+        "role": "assistant",
+        "ts": 1754464004000,
+        "text": "It is a static transition table."
+      }
+    ]
+  }
+}

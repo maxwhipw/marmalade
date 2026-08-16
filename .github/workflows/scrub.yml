@@ -1,0 +1,14 @@
+name: scrub-lint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  scrub-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run scrub lint
+        run: scripts/scrub-lint.sh

@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": "4",
+  "method": "session.create",
+  "params": {
+    "cols": 80,
+    "title": "morning chat"
+  }
+}

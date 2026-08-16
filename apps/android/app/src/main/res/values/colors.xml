@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Marmalade amber palette for XML resources (splash, adaptive icon, etc.) -->
+    <color name="marmalade_amber_50">#FFFFFBEB</color>
+    <color name="marmalade_amber_500">#FFF59E0B</color>
+    <color name="marmalade_amber_900">#FF78350F</color>
+
+    <!-- Adaptive icon background -->
+    <color name="ic_launcher_background">#FFF59E0B</color>
+</resources>

@@ -1,0 +1,27 @@
+{
+  "jsonrpc": "2.0",
+  "id": "3",
+  "result": {
+    "protocolVersion": 1,
+    "server": {
+      "name": "marmaladed",
+      "version": "0.0.1"
+    },
+    "principal": "owner",
+    "features": [
+      "state-reads",
+      "stable-ids",
+      "subscribe",
+      "pairing",
+      "attachments",
+      "undo",
+      "transcription",
+      "clarify",
+      "workspaces",
+      "terminal",
+      "search",
+      "search_archive",
+      "settings"
+    ]
+  }
+}

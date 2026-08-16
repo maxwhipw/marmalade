@@ -1,0 +1,15 @@
+{
+  "jsonrpc": "2.0",
+  "id": "126",
+  "method": "search.messages",
+  "params": {
+    "query": "tokenizer",
+    "scope": {
+      "corpus": "archive"
+    },
+    "include_archived": false,
+    "sort": "rank",
+    "limit": 20,
+    "offset": 0
+  }
+}

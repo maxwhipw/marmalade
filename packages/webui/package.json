@@ -1,0 +1,35 @@
+{
+  "name": "@marmalade/webui",
+  "version": "0.0.1",
+  "description": "marmalade webui — shell-agnostic Vite + React SPA over the marmaladed gateway (protocol v1)",
+  "license": "Apache-2.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@marmalade/icons": "workspace:*",
+    "@marmalade/protocol": "workspace:*",
+    "@marmalade/ui-tree": "workspace:*",
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/xterm": "6.0.0",
+    "highlight.js": "11.11.1",
+    "marked": "18.0.6",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "typescript": "5.9.3",
+    "vite": "8.1.4",
+    "vitest": "4.1.10"
+  }
+}

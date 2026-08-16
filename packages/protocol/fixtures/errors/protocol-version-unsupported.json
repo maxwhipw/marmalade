@@ -1,0 +1,13 @@
+{
+  "jsonrpc": "2.0",
+  "id": "148",
+  "error": {
+    "code": -32002,
+    "message": "protocol version 2 is not supported by this daemon",
+    "data": {
+      "supported": [
+        1
+      ]
+    }
+  }
+}

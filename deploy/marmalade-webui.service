@@ -1,0 +1,17 @@
+[Unit]
+Description=Marmalade webui — static dashboard served on loopback (tailnet-exposed via `tailscale serve :8448`)
+After=network.target
+
+[Service]
+Type=simple
+# Serves the built SPA from the repo dist. Rebuild (pnpm --filter @marmalade/webui build)
+# updates the files in place; no restart needed since http.server reads fresh per request.
+# ADJUST THIS: point it at your own checkout's built webui, e.g.
+#   %h/src/marmalade/packages/webui/dist
+WorkingDirectory=/opt/marmalade/packages/webui/dist
+ExecStart=/usr/bin/python3 -m http.server 9132 --bind 127.0.0.1
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

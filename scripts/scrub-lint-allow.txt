@@ -1,0 +1,32 @@
+# scrub-lint allowlist — one "<path>:<pattern-label>" per line.
+#
+# Only add an entry when the match is legitimate FOREVER (documentation of a
+# public standard, a third-party name that happens to collide with a pattern).
+# Never allowlist a real leak: fix the file instead. The linter prints the
+# allowlisted match count on every run so growth here is visible.
+#
+# Placeholders that need no allowlisting: RFC 5737 IPs (192.0.2.x) and RFC 2606
+# names (host.example) — no pattern matches them by design.
+#
+# (empty — no legitimate matches identified yet)
+
+# "Max" as the display label of the "max" reasoning-effort level (code literals).
+apps/android/shared/src/commonMain/kotlin/app/marmalade/android/ui/EffortVocabulary.kt:max
+apps/android/shared/src/commonMain/kotlin/app/marmalade/android/ui/chat/ReasoningPickerSheet.kt:max
+packages/webui/src/components/efforts.ts:max
+packages/webui/test/effort-bounds.test.ts:max
+# "IntrinsicSize.Max" — Compose API name in an explanatory comment.
+apps/android/shared/src/commonMain/kotlin/app/marmalade/android/ui/components/MarmaladeMenu.kt:max
+# "agent-wiki" as a generic skill/registry NAME in fixtures and the behavior
+# spec's product vocabulary (a wiki the daemon may sync; path is user-config).
+packages/daemon/test/skills-sync.test.ts:agent-wiki
+apps/android/app/src/test/java/app/marmalade/android/rpc/SkillsFsRpcMappingTest.kt:agent-wiki
+behavior/README.md:agent-wiki
+behavior/state-upkeep.md:agent-wiki
+# Sanctioned example tailnet hosts (host.example.ts.net / m.example.ts.net) in
+# tailnet-URL handling code and its tests.
+apps/android/app/src/main/java/app/marmalade/android/node/MarmaladeRuntime.kt:ts-net
+apps/android/app/src/test/java/app/marmalade/android/rpc/ConnectionHintsTest.kt:ts-net
+apps/android/app/src/test/java/app/marmalade/android/rpc/SetupCodeTest.kt:ts-net
+# Generic UI placeholder text "~/coding/my-project or /home/you/…".
+packages/webui/src/views/NewWorkspaceDialog.tsx:path-coding-tilde

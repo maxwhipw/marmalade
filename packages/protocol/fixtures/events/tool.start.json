@@ -1,0 +1,25 @@
+{
+  "jsonrpc": "2.0",
+  "method": "event",
+  "params": {
+    "type": "tool.start",
+    "payload": {
+      "id": "toolu_01ExampleToolUseId",
+      "name": "Read",
+      "input": {
+        "file_path": "/home/user/coding/example/src/parser.ts"
+      },
+      "message_id": "k3Jd8Qm2Xp1A",
+      "seq": 48,
+      "ts": 1786000000500,
+      "origin": {
+        "user_id": "owner",
+        "device_id": "handset-1",
+        "platform": "android",
+        "source": "text",
+        "tz_offset": 600
+      }
+    },
+    "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e"
+  }
+}

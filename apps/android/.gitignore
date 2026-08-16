@@ -1,0 +1,62 @@
+*.iml
+.gradle
+
+# ── Secrets / personal state: defense-in-depth for open development ──
+# Credentials and signing material live OUTSIDE the repo; nothing
+# matching these may ever be committed.
+.env
+.env.*
+*.pem
+*.jks
+*.keystore
+keystore.properties
+secrets/
+*.secret
+credentials.json
+.credentials
+*apppassword*
+# Python bytecode cache from any helper scripts run out of the tree
+__pycache__/
+*.pyc
+/local.properties
+/.idea
+.DS_Store
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.aab
+*.ap_
+*.dex
+/app/release
+/app/debug
+/.kotlin
+
+# Ad-hoc device screenshots captured during debugging
+/device-screenshot*.png
+/voice-popup-screenshot.png
+
+# Claude Code runtime state — per-machine agent memory, scheduled-task
+# locks, local settings overrides. The tracked agent configs (commands/,
+# rules/, settings.json) stay in git.
+/.claude/agent-memory/
+/.claude/scheduled_tasks.lock
+/.claude/settings.local.json
+
+# ignore every Gradle module build dir (multi-module since ADR 0011)
+build/
+
+# ComposeNativeTray writes the last-seen tray corner next to the working
+# directory at runtime — per-machine state, not source.
+/desktopApp/tray_position.properties
+
+# ── Fetched binary assets (scripts/fetch-assets.sh) ──────────────────
+# These are not in git; assets-manifest.json records path/size/sha256.
+*.aar
+*.so
+*.onnx
+
+# Tracked agent rules for this module. The repo-root .gitignore ignores
+# `.claude/` at any depth (it means "local config" there); this module's
+# .claude/ is source and must stay tracked.
+!.claude/

@@ -1,0 +1,14 @@
+{
+  "jsonrpc": "2.0",
+  "method": "event",
+  "params": {
+    "type": "approval.resolved",
+    "payload": {
+      "request_id": "R1qP7mZk3Vd0",
+      "choice": "once",
+      "seq": 59,
+      "ts": 1786000002400
+    },
+    "session_id": "s_9f1c2d34-5e6a-4b7c-8d9e-0f1a2b3c4d5e"
+  }
+}

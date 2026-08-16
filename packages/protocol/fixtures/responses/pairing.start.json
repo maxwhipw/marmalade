@@ -1,0 +1,10 @@
+{
+  "jsonrpc": "2.0",
+  "id": "58",
+  "result": {
+    "token": "ExampleBootstrapTokenValue0123456789abcd",
+    "url": "ws://host.example:4180/",
+    "setup_code": "eyJ1cmwiOiJ3czovL2hvc3QuZXhhbXBsZTo0MTgwLyJ9",
+    "expires_at": 1786000300000
+  }
+}

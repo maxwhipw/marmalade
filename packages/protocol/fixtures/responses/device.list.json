@@ -1,0 +1,24 @@
+{
+  "jsonrpc": "2.0",
+  "id": "62",
+  "result": {
+    "devices": [
+      {
+        "device_id": "handset-1",
+        "platform": "android",
+        "paired": true,
+        "connected": true,
+        "first_seen": 1785136000000,
+        "last_seen": 1786000000000
+      },
+      {
+        "device_id": "workstation",
+        "platform": "desktop",
+        "paired": true,
+        "connected": false,
+        "first_seen": 1784272000000,
+        "last_seen": 1785913600000
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "jsonrpc": "2.0",
+  "id": "56",
+  "result": {
+    "default_model": "claude-haiku-4-5",
+    "default_effort": null,
+    "locked": [
+      "default_effort"
+    ],
+    "model_efforts": {
+      "claude-opus-4-8": {
+        "min": "medium",
+        "max": "xhigh"
+      }
+    }
+  }
+}
